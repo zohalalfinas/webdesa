@@ -15,6 +15,9 @@ class ProdukController extends Controller
     {
         return view('product.produk');
     }
+    public function produk(){
+        return view('admin.produk');
+    }
 
     /**
      * Show the form for creating a new resource.

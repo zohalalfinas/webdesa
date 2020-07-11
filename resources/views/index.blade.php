@@ -10,11 +10,11 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="trending-tittle">
-                            <strong style="padding:11px 9px;">kami sampaikan</strong>
+                            <strong style="padding:11px 9px;">Kami sampaikan</strong>
                             <!-- <p>Rem ipsum dolor sit amet, consectetur adipisicing elit.</p> -->
                             <div class="trending-animated">
                                 <ul id="js-news" class="js-hidden">
-                                    <li class="news-item">selamat datang di website resmi desa sumberejo......</li>
+                                    <li class="news-item">Selamat datang di website resmi desa sumberejo......</li>
                                 </ul>
                             </div>
                             
