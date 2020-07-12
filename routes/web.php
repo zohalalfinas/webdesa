@@ -21,3 +21,4 @@ Route::get('/event/detail', 'EventController@show');
 Route::get('/pariwisata', 'PariwisataController@index');
 Route::get('/pariwisata/detail', 'PariwisataController@show');
 Route::get('/covid', 'CovidController@index');
+Route::get('/covid/video', 'CovidController@video');

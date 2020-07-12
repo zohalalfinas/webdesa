@@ -29,7 +29,7 @@
                                 <!-- Main-menu -->
                                 <div class="main-menu d-none d-md-block">
                                     <nav class="">                  
-                                        <ul id="navigation">
+                                        <ul id="navigation sticky-logo">
                                         <a href="index.html"><img style="width:7%;" src="{{asset('aznews/assets/img/logo/kab.png')}}" alt="" ></a>
                                             <li> <h3 style="font-family:arkipelago;font-size:50px;margin-left:10px;">Sumberejo</h3> </li>
                                             <li style="margin-left:31%;"><a href="{{url('/')}}">Home</a></li>

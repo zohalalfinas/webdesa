@@ -13,7 +13,12 @@ class CovidController extends Controller
      */
     public function index()
     {
-        return view('covids.covid');
+        return view('covids.infograf');
+    }
+
+    public function video()
+    {
+        return view('covids.video');
     }
 
     /**
