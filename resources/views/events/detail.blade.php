@@ -5,30 +5,26 @@
 <main>
   <div class="container mt-5 mb-5">
     <div class="card mx-auto mb-3" style="width: 40rem;">
-        <img  src="{{asset('aznews/assets/img/trending/trending_bottom1.jpg')}}" class="card-img-top" alt="...">
+      <img src="{{asset('foto/event')}}/{{$data->foto}}" class="card-img-top" alt="...">
         <div class="card-body">
-          <h5 class="card-title">uClass: Belajar Dasar Tahsin Al-Quran</h5>
-            <span class="color2">Workshop</span>
+          <h5 class="card-title">{{$data->nama}}</h5>
             <div class="row mt-3">
             <div class="col border">
                 <p>Diselenggarakan oleh :</p>
-                <img style="border-raidus:50%; width:100px;" src="{{asset('aznews/assets/img/trending/trending_bottom1.jpg')}}" alt="">
+                {{$data->penyelenggara}}
               </div>
               <div class="col border">
                 <p>Tanggal & waktu :</p>
-                <p>11 Jul 2020 - 11 Jul 2020</p>
-                <p>13:00 - 14:30 WIB</p>
+                <p>{{$data->tgl}}</p>
+                <p>{{$data->waktu}}</p>
               </div>
               <div class="col border">
                 <p>lokasi :</p>
-                <p>Event online</p>
+                <p>{{$data->lokasi}}</p>
               </div>
             </div>
             <h5 class="card-title mt-5">Deskripsi Event </h5>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Mollitia sapiente sit illum at assumenda voluptatum omnis enim vitae fuga! Minima, voluptatem sint tenetur ipsam recusandae saepe ea assumenda! Atque, ducimus. Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste est sit provident quaerat hic, ducimus dignissimos cupiditate nam iure dolor excepturi accusantium, dolorum natus tenetur, ad molestias voluptatibus eaque officiis!</p>
-            <h5 class="card-title mt-5">Syarat dan ketentuan </h5>
-            <p class="card-text">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Debitis odit earum dolores dolore impedit, eos quasi esse? Laudantium deserunt asperiores qui, quod aperiam ullam eius, eum quam assumenda, veniam suscipit.
-            </p>
+            <p class="card-text">{{$data->deskripsi}}</p>
         </div>
     </div>
   </div>

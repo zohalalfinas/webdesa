@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\m_pariwisata;
 
 class PariwisataController extends Controller
 {
@@ -13,72 +14,54 @@ class PariwisataController extends Controller
      */
     public function index()
     {
-        return view('pariwisata.index');
+        $data = m_pariwisata::get();
+        return view('pariwisata.index',compact('data'));
+    }
+    public function pariwisata(){
+        $data = m_pariwisata::get();
+        return view('admin.pariwisata', compact('data'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
     public function store(Request $request)
     {
-        //
+        $data = new m_pariwisata;
+        $data->nama = $request['nama'];
+        $data->lokasi = $request['lokasi'];
+        $data->deskripsi = $request['deskripsi'];
+        $data->youtube = $request['youtube'];
+        if($request->hasFile('foto')){
+            $request->file('foto')->move('foto/pariwisata/', $request->file('foto')->getClientOriginalName());
+            $data->foto = $request->file('foto')->getClientOriginalName();
+            }
+        $data->save();
+        return back()->with('success','Pariwisata Berhasil Ditambah');
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show()
+    public function show($id)
     {
-        return view('pariwisata.detail');
+        $data = m_pariwisata::find($id);
+        $datas = m_pariwisata::get();
+        return view('pariwisata.detail', compact('data', 'datas'));
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function update(Request $request, $id)
     {
-        //
+        $data = m_pariwisata::find($id);
+        $data->nama = $request['nama'];
+        $data->lokasi = $request['lokasi'];
+        $data->deskripsi = $request['deskripsi'];
+        $data->youtube = $request['youtube'];
+        if($request->hasFile('foto')){
+            $request->file('foto')->move('foto/pariwisata/', $request->file('foto')->getClientOriginalName());
+            $data->foto = $request->file('foto')->getClientOriginalName();
+            }
+        $data->save();
+        return back()->with('success','Pariwisata Berhasil Diubah');
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function destroy($id)
     {
-        //
+        $data = m_pariwisata::find($id)->delete();
+        return back()->with('success','Pariwisata Berhasil Dihapus');
     }
 }

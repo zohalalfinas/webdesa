@@ -45,17 +45,18 @@
         </div> 
         <section>
             <div class="container">
-                <div class="row ">
+                <div class="row col-md-12">
+                    @foreach ($data as $event)                   
                     <div class="card mt-5 ml-1 mb-3" style="width: 18rem; display:block;">
-                        <img src="{{asset('aznews/assets/img/trending/trending_bottom1.jpg')}}" class="card-img-top" alt="...">
+                        <img src="{{asset('foto/event')}}/{{$event->foto}}" class="card-img-top" alt="...">
                         <div class="card-body">
-                            <h5 class="card-title">Event title</h5>
+                            <h5 class="card-title">{{$event->nama}}</h5>
                             <div class="row">
                                 <div class="col">
-                                    <p>tanggal :</p>
+                                    <p>Tanggal</p>
                                 </div>
                                 <div class="col-sm-7">
-                                    <p>08 Jul 2020 - 08 Jul 2020</p>
+                                    <p>{{$event->tgl}}</p>
                                 </div>
                             </div>
                             <div class="row">
@@ -63,7 +64,7 @@
                                     <p>waktu :</p>
                                 </div>
                                 <div class="col-sm-7">
-                                    <p>08:00 - 17:00 WIB</p>
+                                    <p>{{$event->waktu}}</p>
                                 </div>
                             </div>
                             <div class="row">
@@ -71,166 +72,12 @@
                                     <p>lokasi :</p>
                                 </div>
                                 <div class="col-sm-7">
-                                    <p>airport/hotel/stadion, jawa timur</p>
+                                    <p>{{$event->lokasi}}</p>
                                 </div>
                             </div>
-                            <a href="{{url('event/detail')}}" class="btn btn-primary">Lihat selengkapnya</a>
+                             <a href="{{url('event/detail')}}/{{$event->id_event}}" class="btn btn-primary">Lihat selengkapnya</a>
                         </div>
-                    </div>
-                    <div class="card mt-5 ml-1 mb-3" style="width: 18rem; display:block;">
-                        <img src="{{asset('aznews/assets/img/trending/trending_bottom1.jpg')}}" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <h5 class="card-title">Event title</h5>
-                            <div class="row">
-                                <div class="col">
-                                    <p>tanggal :</p>
-                                </div>
-                                <div class="col-sm-7">
-                                    <p>08 Jul 2020 - 08 Jul 2020</p>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col">
-                                    <p>waktu :</p>
-                                </div>
-                                <div class="col-sm-7">
-                                    <p>08:00 - 17:00 WIB</p>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col">
-                                    <p>lokasi :</p>
-                                </div>
-                                <div class="col-sm-7">
-                                    <p>airport/hotel/stadion, jawa timur</p>
-                                </div>
-                            </div>
-                            <a href="{{url('event/detail')}}" class="btn btn-primary">Lihat selengkapnya</a>
-                        </div>
-                    </div>
-                    <div class="card mt-5 ml-1 mb-3" style="width: 18rem; display:block;">
-                        <img src="{{asset('aznews/assets/img/trending/trending_bottom1.jpg')}}" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <h5 class="card-title">Event title</h5>
-                            <div class="row">
-                                <div class="col">
-                                    <p>tanggal :</p>
-                                </div>
-                                <div class="col-sm-7">
-                                    <p>08 Jul 2020 - 08 Jul 2020</p>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col">
-                                    <p>waktu :</p>
-                                </div>
-                                <div class="col-sm-7">
-                                    <p>08:00 - 17:00 WIB</p>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col">
-                                    <p>lokasi :</p>
-                                </div>
-                                <div class="col-sm-7">
-                                    <p>airport/hotel/stadion, jawa timur</p>
-                                </div>
-                            </div>
-                            <a href="{{url('event/detail')}}" class="btn btn-primary">Lihat selengkapnya</a>
-                        </div>
-                    </div>
-                    <div class="card mt-5 ml-1 mb-3" style="width: 18rem; display:block;">
-                        <img src="{{asset('aznews/assets/img/trending/trending_bottom1.jpg')}}" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <h5 class="card-title">Event title</h5>
-                            <div class="row">
-                                <div class="col">
-                                    <p>tanggal :</p>
-                                </div>
-                                <div class="col-sm-7">
-                                    <p>08 Jul 2020 - 08 Jul 2020</p>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col">
-                                    <p>waktu :</p>
-                                </div>
-                                <div class="col-sm-7">
-                                    <p>08:00 - 17:00 WIB</p>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col">
-                                    <p>lokasi :</p>
-                                </div>
-                                <div class="col-sm-7">
-                                    <p>airport/hotel/stadion, jawa timur</p>
-                                </div>
-                            </div>
-                            <a href="{{url('event/detail')}}" class="btn btn-primary">Lihat selengkapnya</a>
-                        </div>
-                    </div>
-                    <div class="card mt-5 ml-1 mb-3" style="width: 18rem; display:block;">
-                        <img src="{{asset('aznews/assets/img/trending/trending_bottom1.jpg')}}" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <h5 class="card-title">Event title</h5>
-                            <div class="row">
-                                <div class="col">
-                                    <p>tanggal :</p>
-                                </div>
-                                <div class="col-sm-7">
-                                    <p>08 Jul 2020 - 08 Jul 2020</p>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col">
-                                    <p>waktu :</p>
-                                </div>
-                                <div class="col-sm-7">
-                                    <p>08:00 - 17:00 WIB</p>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col">
-                                    <p>lokasi :</p>
-                                </div>
-                                <div class="col-sm-7">
-                                    <p>airport/hotel/stadion, jawa timur</p>
-                                </div>
-                            </div>
-                            <a href="{{url('event/detail')}}" class="btn btn-primary">Lihat selengkapnya</a>
-                        </div>
-                    </div>
-                    <div class="card mt-5 ml-1 mb-3" style="width: 18rem; display:block;">
-                        <img src="{{asset('aznews/assets/img/trending/trending_bottom1.jpg')}}" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <h5 class="card-title">Event title</h5>
-                            <div class="row">
-                                <div class="col">
-                                    <p>tanggal :</p>
-                                </div>
-                                <div class="col-sm-7">
-                                    <p>08 Jul 2020 - 08 Jul 2020</p>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col">
-                                    <p>waktu :</p>
-                                </div>
-                                <div class="col-sm-7">
-                                    <p>08:00 - 17:00 WIB</p>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col">
-                                    <p>lokasi :</p>
-                                </div>
-                                <div class="col-sm-7">
-                                    <p>airport/hotel/stadion, jawa timur</p>
-                                </div>
-                            </div>
-                            <a href="{{url('event/detail')}}" class="btn btn-primary">Lihat selengkapnya</a>
-                        </div>
+                    @endforeach
                     </div>
                 </div>
             </div>

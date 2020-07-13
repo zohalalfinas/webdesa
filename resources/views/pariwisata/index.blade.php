@@ -8,23 +8,11 @@
             <div class="row">
                 <div class="col-12">
                     <div class="video-items-active">
+                        @foreach ($data as $link)
                         <div class="video-items text-center">
-                            <iframe src="https://www.youtube.com/embed/CicQIuG8hBo" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            <iframe src="https://www.youtube.com/embed/{{trim($link->youtube, 'https://www.youtube.com/watch?v=')}}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                         </div>
-                        <div class="video-items text-center">
-                            <iframe  src="https://www.youtube.com/embed/rIz00N40bag" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                        </div>
-                        <div class="video-items text-center">
-                            <iframe src="https://www.youtube.com/embed/CONfhrASy44" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
-                        </div>
-                        <div class="video-items text-center">
-                            <iframe src="https://www.youtube.com/embed/lq6fL2ROWf8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                         
-                        </div>
-                        <div class="video-items text-center">
-                            <iframe src="https://www.youtube.com/embed/0VxlQlacWV4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                        </div>
+                        @endforeach
                     </div>
                 </div>
             </div>
@@ -43,36 +31,14 @@
                     </div>
                     <div class="col-lg-6">
                         <div class="testmonial-nav text-center">
+                            @foreach ($data as $link)
                             <div class="single-video">
-                                <iframe  src="https://www.youtube.com/embed/CicQIuG8hBo" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                <iframe  src="https://www.youtube.com/embed/{{trim($link->youtube, 'https://www.youtube.com/watch?v=')}}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                                 <div class="video-intro">
-                                    <h4>Pantai watu ulo sumberejo</h4>
+                                    <h4>{{$link->nama}}</h4>
                                 </div>
                             </div>
-                            <div class="single-video">
-                                <iframe  src="https://www.youtube.com/embed/rIz00N40bag" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                                <div class="video-intro">
-                                    <h4>Pantai watu ulo sumberejo</h4>
-                                </div>
-                            </div>
-                            <div class="single-video">
-                                <iframe src="https://www.youtube.com/embed/CONfhrASy44" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                                <div class="video-intro">
-                                    <h4>Pantai watu ulo sumberejo</h4>
-                                </div>
-                            </div>
-                            <div class="single-video">
-                                <iframe src="https://www.youtube.com/embed/lq6fL2ROWf8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                                <div class="video-intro">
-                                    <h4>Pantai watu ulo sumberejo</h4>
-                                </div>
-                            </div>
-                            <div class="single-video">
-                                <iframe src="https://www.youtube.com/embed/0VxlQlacWV4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                                <div class="video-intro">
-                                    <h4>Pantai watu ulo sumberejo</h4>
-                                </div>
-                            </div>
+                            @endforeach
                         </div>
                     </div>
                 </div>
@@ -86,71 +52,27 @@
             <div class="row">
                 <div class="col-lg-8 mb-5 mb-lg-0">
                     <div class="blog_left_sidebar">
+                        @foreach ($data as $pariwisata)
                         <article class="blog_item">
                             <div class="blog_item_img">
-                                <img class="card-img rounded-0" src="{{asset('aznews/assets/img/blog/single_blog_1.png')}}" alt="">
-                                <a href="{{url('pariwisata/detail')}}" class="blog_item_date">
+                                <img class="card-img rounded-0" src="{{asset('foto/event')}}/{{$pariwisata->foto}}" alt="">
+                                <a href="{{url('pariwisata/detail' , $pariwisata->id_pariwisata)}}" class="blog_item_date">
                                     <p>Detail</p>
                                 </a>
                             </div>
 
                             <div class="blog_details">
-                                <a class="d-inline-block" href="{{url('pariwisata/detail')}}">
-                                    <h2>Pantai watu ulo sumberejo</h2>
+                                <a class="d-inline-block" href="{{url('pariwisata/detail' , $pariwisata->id_pariwisata)}}">
+                                    <h2>{{$pariwisata->nama}}</h2>
                                 </a>
-                                <p>That dominion stars lights dominion divide years for fourth have don't stars is that
-                                    he earth it first without heaven in place seed it second morning saying.</p>
+                                <p>{{ Illuminate\Support\Str::limit($pariwisata->deskripsi, $limit = 120, $end = '...') }}</p>
                                 <ul class="blog-info-link">
-                                    <li><a href="#"><i class="fa fa-user"></i> Travel, Lifestyle</a></li>
+                                    <li><a href="{{$pariwisata->lokasi}}"><i class="fa fa-user"></i> Lokasi</a></li>
                                     <li><a href="#"><i class="fa fa-comments"></i> 03 Comments</a></li>
                                 </ul>
                             </div>
                         </article>
-
-                        <article class="blog_item">
-                            <div class="blog_item_img">
-                                <img class="card-img rounded-0" src="{{asset('aznews/assets/img/blog/single_blog_2.png')}}" alt="">
-                                <a href="{{url('pariwisata/detail')}}" class="blog_item_date">
-                                    <p>Detail</p>
-                                </a>
-                            </div>
-
-                            <div class="blog_details">
-                                <a class="d-inline-block" href="{{url('pariwisata/detail')}}">
-                                    <h2>Pantai watu ulo sumberejo</h2>
-                                </a>
-                                <p>That dominion stars lights dominion divide years for fourth have don't stars is that
-                                    he earth it first without heaven in place seed it second morning saying.</p>
-                                <ul class="blog-info-link">
-                                    <li><a href="#"><i class="fa fa-user"></i> Travel, Lifestyle</a></li>
-                                    <li><a href="#"><i class="fa fa-comments"></i> 03 Comments</a></li>
-                                </ul>
-                            </div>
-                        </article>
-
-                        <article class="blog_item">
-                            <div class="blog_item_img">
-                                <img class="card-img rounded-0" src="{{asset('aznews/assets/img/blog/single_blog_3.png')}}" alt="">
-                                <a href="{{url('pariwisata/detail')}}" class="blog_item_date">
-                                    <p>Detail</p>
-                                </a>
-                            </div>
-
-                            <div class="blog_details">
-                                <a class="d-inline-block" href="{{url('pariwisata/detail')}}">
-                                    <h2>Pantai watu ulo sumberejo</h2>
-                                </a>
-                                <p>That dominion stars lights dominion divide years for fourth have don't stars is that
-                                    he earth it first without heaven in place seed it second morning saying.</p>
-                                <ul class="blog-info-link">
-                                    <li><a href="#"><i class="fa fa-user"></i> Travel, Lifestyle</a></li>
-                                    <li><a href="#"><i class="fa fa-comments"></i> 03 Comments</a></li>
-                                </ul>
-                            </div>
-                        </article>
-
-                       
-
+                        @endforeach
                         <nav class="blog-pagination justify-content-center d-flex">
                             <ul class="pagination">
                                 <li class="page-item">
@@ -179,42 +101,17 @@
 
                         <aside class="single_sidebar_widget popular_post_widget">
                             <h3 class="widget_title">Recent Post</h3>
+                            @foreach ($data as $item)
                             <div class="media post_item">
-                                <img src="{{asset('aznews/assets/img/post/post_1.png')}}" alt="post">
+                                <img src="{{asset('foto/pariwisata')}}/{{$item->foto}}" alt="post" class="img-fluid" width="50%">
                                 <div class="media-body">
                                     <a href="{{url('pariwisata/detail')}}">
-                                        <h3>From life was you fish...</h3>
+                                        <h3>{{$item->nama}}</h3>
                                     </a>
-                                    <p>detailuary 12, 2019</p>
+                                    <p>{{ $item->created_at->diffForHumans() }}</p>
                                 </div>
                             </div>
-                            <div class="media post_item">
-                                <img src="{{asset('aznews/assets/img/post/post_2.png')}}" alt="post">
-                                <div class="media-body">
-                                    <a href="{{url('pariwisata/detail')}}">
-                                        <h3>The Amazing Hubble</h3>
-                                    </a>
-                                    <p>02 Hours ago</p>
-                                </div>
-                            </div>
-                            <div class="media post_item">
-                                <img src="{{asset('aznews/assets/img/post/post_3.png')}}" alt="post">
-                                <div class="media-body">
-                                    <a href="{{url('pariwisata/detail')}}">
-                                        <h3>Astronomy Or Astrology</h3>
-                                    </a>
-                                    <p>03 Hours ago</p>
-                                </div>
-                            </div>
-                            <div class="media post_item">
-                                <img src="{{asset('aznews/assets/img/post/post_4.png')}}" alt="post">
-                                <div class="media-body">
-                                    <a href="{{url('pariwisata/detail')}}">
-                                        <h3>Asteroids telescope</h3>
-                                    </a>
-                                    <p>01 Hours ago</p>
-                                </div>
-                            </div>
+                            @endforeach
                         </aside>
 
                         <aside class="single_sidebar_widget instagram_feeds">

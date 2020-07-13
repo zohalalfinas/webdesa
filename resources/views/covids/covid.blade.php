@@ -24,13 +24,15 @@
             <center>
             <div style="margin-top:-4%;" class="row">
                 <div style="height:100px; border-radius:10px;" class="col bg-danger ">
-                    <h1 style="color:white; " class="mt-4">1000</h1>
+
+                    <h1 style="color:white; " class="mt-4">{{ $grafik->positif }}</h1>
                 </div>
                 <div style="height:100px; border-radius:10px;" class="col bg-primary circle ">
-                    <h1 style="color:white; " class="mt-4">1000</h1>
+                    <h1 style="color:white; " class="mt-4">{{ $grafik->sembuh }}</h1>
                 </div>
                 <div style="height:100px; border-radius:10px;" class="col bg-dark">
-                    <h1 style="color:white; " class="mt-4">1000</h1>
+                    <h1 style="color:white; " class="mt-4">{{ $grafik->meninggal }}</h1>
+
                 </div>
             </div>
             </center>
@@ -44,6 +46,8 @@
                     <h3>Edukasi covid</h3>
                     <li><a href="{{url('covid')}}"><p>01. infografis edukasi covid-19</p> </a> </li>
                     <li><a href="{{url('covid/video')}}"><p>02. video edukasi covid-19</p> </a> </li>
+                    <li><a href="{{url('covid/artikel')}}"><p>03. Artikel Edukasi COVID 19</p> </a> </li>
+
                 </div>
                 @yield('content-covid')
             </div>
