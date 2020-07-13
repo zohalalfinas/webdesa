@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateEvent extends Migration
+class CreateArtikel extends Migration
 {
     /**
      * Run the migrations.
@@ -13,15 +13,11 @@ class CreateEvent extends Migration
      */
     public function up()
     {
-        Schema::create('event', function (Blueprint $table) {
-            $table->bigIncrements('id_event');
-            $table->string('nama');
+        Schema::create('artikel', function (Blueprint $table) {
+            $table->bigIncrements('id_artikel');
+            $table->string('judul');
             $table->text('deskripsi');
-            $table->date('tgl');
             $table->string('foto');
-            $table->string('lokasi');
-            $table->string('waktu');
-            $table->string('penyelenggara');
             $table->timestamps();
         });
     }
@@ -33,6 +29,6 @@ class CreateEvent extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('event');
+        Schema::dropIfExists('artikel');
     }
 }

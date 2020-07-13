@@ -11,7 +11,7 @@
             <div class="row mt-3">
             <div class="col border">
                 <p>Diselenggarakan oleh :</p>
-                <img style="border-raidus:50%; width:100px;"  src="{{asset('foto/event')}}/{{$data->foto}}" alt="">
+                {{$data->penyelenggara}}
               </div>
               <div class="col border">
                 <p>Tanggal & waktu :</p>

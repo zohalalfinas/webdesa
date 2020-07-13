@@ -61,6 +61,11 @@
                                     <div class="col-sm-10"><input name="lokasi" id="lokasi"
                                             placeholder="Masukkan Lokasi Event" type="text" class="form-control"></div>
                                 </div>
+                                <div class="position-relative row form-group"><label for="penyelenggara"
+                                        class="col-sm-2 col-form-label">Penyelenggara</label>
+                                    <div class="col-sm-10"><input name="penyelenggara" id="penyelenggara"
+                                            placeholder="Masukkan Penyelenggara Event" type="text" class="form-control"></div>
+                                </div>
                                 <div class="position-relative row form-group"><label for="deskripsi"
                                         class="col-sm-2 col-form-label">Deskripsi</label>
                                     <div class="col-sm-10"><textarea name="deskripsi" id="deskripsi"
@@ -133,6 +138,12 @@
                                                     placeholder="Masukkan Lokasi Event" type="text" class="form-control"
                                                     value="{{ $event->lokasi }}"></div>
                                         </div>
+                                        <div class="position-relative row form-group"><label for="penyelenggara"
+                                                class="col-sm-2 col-form-label">Penyelenggara</label>
+                                            <div class="col-sm-10"><input name="penyelenggara" id="penyelenggara"
+                                                    placeholder="Masukkan penyelenggara Event" type="text" class="form-control"
+                                                    value="{{ $event->penyelenggara }}"></div>
+                                        </div>
                                         <div class="position-relative row form-group"><label for="deskripsi"
                                                 class="col-sm-2 col-form-label">Deskripsi</label>
                                             <div class="col-sm-10"><textarea name="deskripsi" id="deskripsi"
@@ -157,60 +168,68 @@
                                             data-target="#{{$event->id_event}}">Hapus</button>
                                     </div>
                                 </div>
-                            </div>
-                            @else
-                            <div class="tab-pane" id="tab-{{$event->id_event}}" role="tabpanel">
-                                <form action="{{ route('update.event' , $event->id_event)}}" method="post"
-                                    enctype="multipart/form-data">
-                                    {{csrf_field()}}{{method_field('PATCH')}}
-                                    <div class="position-relative row form-group"><label for="nama"
-                                            class="col-sm-2 col-form-label">Nama Event</label>
-                                        <div class="col-sm-10"><input name="nama" id="nama"
-                                                placeholder="Masukkan Nama Event" type="text" class="form-control"
-                                                value="{{ $event->nama }}"></div>
-                                    </div>
-                                    <div class="position-relative row form-group"><label for="tgl"
-                                            class="col-sm-2 col-form-label">Tanggal</label>
-                                        <div class="col-sm-3"><input name="tgl" id="tgl" type="date"
-                                                class="form-control" value="{{ $event->tgl }}">
+
+                                @else
+                                <div class="tab-pane" id="tab-{{$event->id_event}}" role="tabpanel">
+                                    <form action="{{ route('update.event' , $event->id_event)}}" method="post"
+                                        enctype="multipart/form-data">
+                                        {{csrf_field()}}{{method_field('PATCH')}}
+                                        <div class="position-relative row form-group"><label for="nama"
+                                                class="col-sm-2 col-form-label">Nama Event</label>
+                                            <div class="col-sm-10"><input name="nama" id="nama"
+                                                    placeholder="Masukkan Nama Event" type="text" class="form-control"
+                                                    value="{{ $event->nama }}"></div>
                                         </div>
-                                    </div>
-                                    <div class="position-relative row form-group"><label for="waktu"
-                                            class="col-sm-2 col-form-label">Waktu</label>
-                                        <div class="col-sm-10"><input name="waktu" id="waktu"
-                                                placeholder="Masukkan Waktu Event" type="text" class="form-control"
-                                                value="{{ $event->waktu }}"></div>
-                                    </div>
-                                    <div class="position-relative row form-group"><label for="waktu"
-                                            class="col-sm-2 col-form-label">Lokasi</label>
-                                        <div class="col-sm-10"><input name="lokasi" id="lokasi"
-                                                placeholder="Masukkan Lokasi Event" type="text" class="form-control"
-                                                value="{{ $event->lokasi }}"></div>
-                                    </div>
-                                    <div class="position-relative row form-group"><label for="deskripsi"
-                                            class="col-sm-2 col-form-label">Deskripsi</label>
-                                        <div class="col-sm-10"><textarea name="deskripsi" id="deskripsi"
-                                                class="form-control">{{ $event->deskripsi }}</textarea></div>
-                                    </div>
-                                    <div class="position-relative row form-group"><label for="foto"
-                                            class="col-sm-2 col-form-label">Foto</label>
-                                        <div class="col-sm-10"><input name="foto" id="foto" type="file"
-                                                class="form-control-file">
-                                            <img src="{{asset('foto/event')}}/{{$event->foto}}" class="img-thumbnail">
+                                        <div class="position-relative row form-group"><label for="tgl"
+                                                class="col-sm-2 col-form-label">Tanggal</label>
+                                            <div class="col-sm-3"><input name="tgl" id="tgl" type="date"
+                                                    class="form-control" value="{{ $event->tgl }}">
+                                            </div>
                                         </div>
-                                    </div>
-                                    <br>
-                                    <div class="position-relative row btn-group form-inline offset-md-3 col-md-5">
-                                        <div class="col-sm-10 offset-sm-2 col-md-2 form-group">
-                                            <button type="submit" class="btn btn-success">Simpan</button>
+                                        <div class="position-relative row form-group"><label for="waktu"
+                                                class="col-sm-2 col-form-label">Waktu</label>
+                                            <div class="col-sm-10"><input name="waktu" id="waktu"
+                                                    placeholder="Masukkan Waktu Event" type="text" class="form-control"
+                                                    value="{{ $event->waktu }}"></div>
                                         </div>
-                                </form>
-                                <div class="col-sm-10 offset-sm-1 col-md-2 form-group">
-                                    <button type="button" class="btn btn-danger" data-toggle="modal"
-                                        data-target="#{{$event->id_event}}">Hapus</button>
+                                        <div class="position-relative row form-group"><label for="waktu"
+                                                class="col-sm-2 col-form-label">Lokasi</label>
+                                            <div class="col-sm-10"><input name="lokasi" id="lokasi"
+                                                    placeholder="Masukkan Lokasi Event" type="text" class="form-control"
+                                                    value="{{ $event->lokasi }}"></div>
+                                        </div>
+                                        <div class="position-relative row form-group"><label for="penyelenggara"
+                                            class="col-sm-2 col-form-label">Penyelenggara</label>
+                                        <div class="col-sm-10"><input name="penyelenggara" id="penyelenggara"
+                                                placeholder="Masukkan penyelenggara Event" type="text" class="form-control"
+                                                value="{{ $event->penyelenggara }}"></div>
+                                        </div>
+                                        <div class="position-relative row form-group"><label for="deskripsi"
+                                                class="col-sm-2 col-form-label">Deskripsi</label>
+                                            <div class="col-sm-10"><textarea name="deskripsi" id="deskripsi"
+                                                    class="form-control">{{ $event->deskripsi }}</textarea></div>
+                                        </div>
+                                        <div class="position-relative row form-group"><label for="foto"
+                                                class="col-sm-2 col-form-label">Foto</label>
+                                            <div class="col-sm-10"><input name="foto" id="foto" type="file"
+                                                    class="form-control-file">
+                                                <img src="{{asset('foto/event')}}/{{$event->foto}}"
+                                                    class="img-thumbnail">
+                                            </div>
+                                        </div>
+                                        <br>
+                                        <div class="position-relative row btn-group form-inline offset-md-3 col-md-5">
+                                            <div class="col-sm-10 offset-sm-2 col-md-2 form-group">
+                                                <button type="submit" class="btn btn-success">Simpan</button>
+                                            </div>
+                                    </form>
+                                    <div class="col-sm-10 offset-sm-1 col-md-2 form-group">
+                                        <button type="button" class="btn btn-danger" data-toggle="modal"
+                                            data-target="#{{$event->id_event}}">Hapus</button>
+                                    </div>
                                 </div>
+                                @endif
                             </div>
-                            @endif  
                             @php
                             $j++;
                             @endphp
@@ -222,12 +241,12 @@
         </div>
     </div>
 </div>
-</div>
 @endsection
 
 {{-- Modal Hapus  --}}
 @foreach ($data as $item)
-<div class="modal fade" id="{{$item->id_event}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="{{$item->id_event}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">

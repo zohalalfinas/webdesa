@@ -4,51 +4,42 @@
 <div class="col-lg-8 mb-5 mb-lg-0">
     <div class="trending-bottom">
         <div class="row">
+            @foreach ($data as $infograf)
             <div class="col-lg-4 ">
                 <div class="single-bottom mb-35">
                     <div class="trend-bottom-img mb-30">
-                        <a href="{{url('aznews/assets/img/gallery/infograf.jpg')}}"><img style="width:50%;" src="{{asset('aznews/assets/img/gallery/infograf.jpg')}}" alt=""></a>
+                        <a data-toggle="modal" data-target="#image{{$infograf->id_infografik}}"><img style="width:50%;"
+                                src="{{asset('foto/infografik')}}/{{$infograf->foto}}" alt=""></a>
                     </div>
                     <div class="trend-bottom-cap">
-                        <span class="color1">Lifestyple</span>
-                        <p><a style="color:black;" href="details.html">Get the Illusion of Fuller Lashes by “Mascng.”</a></p>
+                        <span class="color1">{{ $infograf->judul }}</span>
                     </div>
-                </div>  
+                </div>
             </div>
-            <div class="col-lg-4 ">
-                <div class="single-bottom mb-35">
-                    <div class="trend-bottom-img mb-30">
-                        <a href="{{url('aznews/assets/img/gallery/infograf.jpg')}}"><img style="width:50%;" src="{{asset('aznews/assets/img/gallery/infograf.jpg')}}" alt=""></a>
+            @endforeach
+        </div>
+    </div>
+</div>
+{{-- Modal  --}}
+@foreach ($data as $item)
+<div class="row">
+    <div class="col-lg-4 col-md-12 mb-4">
+        <div class="modal fade" id="image{{$item->id_infografik}}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+                <div class="modal-content">
+                    <div class="modal-body mb-0 p-0">
+                        <img src="{{asset('foto/infografik')}}/{{$infograf->foto}}" alt="">
                     </div>
-                    <div class="trend-bottom-cap">
-                        <span class="color1">Lifestyple</span>
-                        <p><a style="color:black;" href="details.html">Get the Illusion of Fuller Lashes by “Mascng.”</a></p>
+                    <div class="modal-footer justify-content-center">
+                        <button type="button" class="btn btn-outline-primary btn-rounded btn-md ml-4"
+                        data-dismiss="modal">Close</button>
                     </div>
-                </div>  
-            </div>
-            <div class="col-lg-4 ">
-                <div class="single-bottom mb-35">
-                    <div class="trend-bottom-img mb-30">
-                        <a href="{{url('aznews/assets/img/gallery/infograf.jpg')}}"><img style="width:50%;" src="{{asset('aznews/assets/img/gallery/infograf.jpg')}}" alt=""></a>
-                    </div>
-                    <div class="trend-bottom-cap">
-                        <span class="color1">Lifestyple</span>
-                        <p><a style="color:black;" href="details.html">Get the Illusion of Fuller Lashes by “Mascng.”</a></p>
-                    </div>
-                </div>  
-            </div>
-            <div class="col-lg-4 ">
-                <div class="single-bottom mb-35">
-                    <div class="trend-bottom-img mb-30">
-                        <a href="{{url('aznews/assets/img/gallery/infograf.jpg')}}"><img style="width:50%;" src="{{asset('aznews/assets/img/gallery/infograf.jpg')}}" alt=""></a>
-                    </div>
-                    <div class="trend-bottom-cap">
-                        <span class="color1">Lifestyple</span>
-                        <p><a style="color:black;" href="details.html">Get the Illusion of Fuller Lashes by “Mascng.”</a></p>
-                    </div>
-                </div>  
+                </div>
             </div>
         </div>
     </div>
 </div>
+@endforeach
+{{-- End Modal  --}}
 @endsection

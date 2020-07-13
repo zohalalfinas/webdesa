@@ -62,10 +62,10 @@
                             </div>
 
                             <div class="blog_details">
-                                <a class="d-inline-block" href="{{url('pariwisata/detail')}}">
+                                <a class="d-inline-block" href="{{url('pariwisata/detail' , $pariwisata->id_pariwisata)}}">
                                     <h2>{{$pariwisata->nama}}</h2>
                                 </a>
-                                <p>{{$pariwisata->deskripsi}}</p>
+                                <p>{{ Illuminate\Support\Str::limit($pariwisata->deskripsi, $limit = 120, $end = '...') }}</p>
                                 <ul class="blog-info-link">
                                     <li><a href="{{$pariwisata->lokasi}}"><i class="fa fa-user"></i> Lokasi</a></li>
                                     <li><a href="#"><i class="fa fa-comments"></i> 03 Comments</a></li>
@@ -101,42 +101,17 @@
 
                         <aside class="single_sidebar_widget popular_post_widget">
                             <h3 class="widget_title">Recent Post</h3>
+                            @foreach ($data as $item)
                             <div class="media post_item">
-                                <img src="{{asset('aznews/assets/img/post/post_1.png')}}" alt="post">
+                                <img src="{{asset('foto/pariwisata')}}/{{$item->foto}}" alt="post" class="img-fluid" width="50%">
                                 <div class="media-body">
                                     <a href="{{url('pariwisata/detail')}}">
-                                        <h3>From life was you fish...</h3>
+                                        <h3>{{$item->nama}}</h3>
                                     </a>
-                                    <p>detailuary 12, 2019</p>
+                                    <p>{{ $item->created_at->diffForHumans() }}</p>
                                 </div>
                             </div>
-                            <div class="media post_item">
-                                <img src="{{asset('aznews/assets/img/post/post_2.png')}}" alt="post">
-                                <div class="media-body">
-                                    <a href="{{url('pariwisata/detail')}}">
-                                        <h3>The Amazing Hubble</h3>
-                                    </a>
-                                    <p>02 Hours ago</p>
-                                </div>
-                            </div>
-                            <div class="media post_item">
-                                <img src="{{asset('aznews/assets/img/post/post_3.png')}}" alt="post">
-                                <div class="media-body">
-                                    <a href="{{url('pariwisata/detail')}}">
-                                        <h3>Astronomy Or Astrology</h3>
-                                    </a>
-                                    <p>03 Hours ago</p>
-                                </div>
-                            </div>
-                            <div class="media post_item">
-                                <img src="{{asset('aznews/assets/img/post/post_4.png')}}" alt="post">
-                                <div class="media-body">
-                                    <a href="{{url('pariwisata/detail')}}">
-                                        <h3>Asteroids telescope</h3>
-                                    </a>
-                                    <p>01 Hours ago</p>
-                                </div>
-                            </div>
+                            @endforeach
                         </aside>
 
                         <aside class="single_sidebar_widget instagram_feeds">

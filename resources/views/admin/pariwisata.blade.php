@@ -44,17 +44,20 @@
                                 <div class="position-relative row form-group"><label for="nama"
                                         class="col-sm-2 col-form-label">Nama Pariwisata</label>
                                     <div class="col-sm-10"><input name="nama" id="nama"
-                                            placeholder="Masukkan Nama Pariwisata" type="text" class="form-control"></div>
+                                            placeholder="Masukkan Nama Pariwisata" type="text" class="form-control">
+                                    </div>
                                 </div>
                                 <div class="position-relative row form-group"><label for="lokasi"
                                         class="col-sm-2 col-form-label">Link Map Lokasi</label>
                                     <div class="col-sm-10"><input name="lokasi" id="lokasi"
-                                            placeholder="Masukkan Lokasi Pariwisata" type="text" class="form-control"></div>
+                                            placeholder="Masukkan Lokasi Pariwisata" type="text" class="form-control">
+                                    </div>
                                 </div>
                                 <div class="position-relative row form-group"><label for="youtube"
                                         class="col-sm-2 col-form-label">Youtube</label>
                                     <div class="col-sm-10"><input name="youtube" id="youtube"
-                                            placeholder="Masukkan Youtube Jika Ada" type="text" class="form-control"></div>
+                                            placeholder="Masukkan Youtube Jika Ada" type="text" class="form-control">
+                                    </div>
                                 </div>
                                 <div class="position-relative row form-group"><label for="deskripsi"
                                         class="col-sm-2 col-form-label">Deskripsi</label>
@@ -101,26 +104,26 @@
                                 @foreach ($data as $pariwisata)
                                 @if ( $j === 1)
                                 <div class="tab-pane active" id="tab-{{$pariwisata->id_pariwisata}}" role="tabpanel">
-                                    <form action="{{ route('update.pariwisata' , $pariwisata->id_pariwisata)}}" method="post"
-                                        enctype="multipart/form-data">
+                                    <form action="{{ route('update.pariwisata' , $pariwisata->id_pariwisata)}}"
+                                        method="post" enctype="multipart/form-data">
                                         {{csrf_field()}}{{method_field('PATCH')}}
                                         <div class="position-relative row form-group"><label for="nama"
                                                 class="col-sm-2 col-form-label">Nama Pariwisata</label>
                                             <div class="col-sm-10"><input name="nama" id="nama"
-                                                    placeholder="Masukkan Nama Pariwisata" type="text" class="form-control"
-                                                    value="{{ $pariwisata->nama }}"></div>
+                                                    placeholder="Masukkan Nama Pariwisata" type="text"
+                                                    class="form-control" value="{{ $pariwisata->nama }}"></div>
                                         </div>
                                         <div class="position-relative row form-group"><label for="lokasi"
                                                 class="col-sm-2 col-form-label">Link Map Lokasi</label>
                                             <div class="col-sm-10"><input name="lokasi" id="lokasi"
-                                                    placeholder="Masukkan Lokasi Pariwisata" type="text" class="form-control"
-                                                    value="{{ $pariwisata->lokasi }}"></div>
+                                                    placeholder="Masukkan Lokasi Pariwisata" type="text"
+                                                    class="form-control" value="{{ $pariwisata->lokasi }}"></div>
                                         </div>
                                         <div class="position-relative row form-group"><label for="youtube"
-                                            class="col-sm-2 col-form-label">Youtube</label>
-                                        <div class="col-sm-10"><input name="youtube" id="youtube"
-                                                placeholder="Masukkan Youtube Jika Ada" type="text" class="form-control" 
-                                                value="{{ $pariwisata->youtube }}"></div>
+                                                class="col-sm-2 col-form-label">Youtube</label>
+                                            <div class="col-sm-10"><input name="youtube" id="youtube"
+                                                    placeholder="Masukkan Youtube Jika Ada" type="text"
+                                                    class="form-control" value="{{ $pariwisata->youtube }}"></div>
                                         </div>
                                         <div class="position-relative row form-group"><label for="deskripsi"
                                                 class="col-sm-2 col-form-label">Deskripsi</label>
@@ -146,54 +149,55 @@
                                             data-target="#{{$pariwisata->id_pariwisata}}">Hapus</button>
                                     </div>
                                 </div>
-                            </div>
-                            @else
-                            <div class="tab-pane" id="tab-{{$pariwisata->id_pariwisata}}" role="tabpanel">
-                                <form action="{{ route('update.pariwisata' , $pariwisata->id_pariwisata)}}" method="post"
-                                    enctype="multipart/form-data">
-                                    {{csrf_field()}}{{method_field('PATCH')}}
-                                    <div class="position-relative row form-group"><label for="nama"
-                                            class="col-sm-2 col-form-label">Nama Pariwisata</label>
-                                        <div class="col-sm-10"><input name="nama" id="nama"
-                                                placeholder="Masukkan Nama Pariwisata" type="text" class="form-control"
-                                                value="{{ $pariwisata->nama }}"></div>
-                                    </div>
-                                    <div class="position-relative row form-group"><label for="waktu"
-                                            class="col-sm-2 col-form-label">Link Map Lokasi</label>
-                                        <div class="col-sm-10"><input name="lokasi" id="lokasi"
-                                                placeholder="Masukkan Lokasi Pariwisata" type="text" class="form-control"
-                                                value="{{ $pariwisata->lokasi }}"></div>
-                                    </div>
-                                    <div class="position-relative row form-group"><label for="youtube"
-                                        class="col-sm-2 col-form-label">Youtube</label>
-                                    <div class="col-sm-10"><input name="youtube" id="youtube"
-                                            placeholder="Masukkan Youtube Jika Ada" type="text" class="form-control" 
-                                            value="{{ $pariwisata->youtube }}"></div>
-                                    </div>
-                                    <div class="position-relative row form-group"><label for="deskripsi"
-                                            class="col-sm-2 col-form-label">Deskripsi</label>
-                                        <div class="col-sm-10"><textarea name="deskripsi" id="deskripsi"
-                                                class="form-control">{{ $pariwisata->deskripsi }}</textarea></div>
-                                    </div>
-                                    <div class="position-relative row form-group"><label for="foto"
-                                            class="col-sm-2 col-form-label">Foto</label>
-                                        <div class="col-sm-10"><input name="foto" id="foto" type="file"
-                                                class="form-control-file">
-                                            <img src="{{asset('foto/pariwisata')}}/{{$pariwisata->foto}}" class="img-thumbnail">
+                                @else
+                                <div class="tab-pane" id="tab-{{$pariwisata->id_pariwisata}}" role="tabpanel">
+                                    <form action="{{ route('update.pariwisata' , $pariwisata->id_pariwisata)}}"
+                                        method="post" enctype="multipart/form-data">
+                                        {{csrf_field()}}{{method_field('PATCH')}}
+                                        <div class="position-relative row form-group"><label for="nama"
+                                                class="col-sm-2 col-form-label">Nama Pariwisata</label>
+                                            <div class="col-sm-10"><input name="nama" id="nama"
+                                                    placeholder="Masukkan Nama Pariwisata" type="text"
+                                                    class="form-control" value="{{ $pariwisata->nama }}"></div>
                                         </div>
-                                    </div>
-                                    <br>
-                                    <div class="position-relative row btn-group form-inline offset-md-3 col-md-5">
-                                        <div class="col-sm-10 offset-sm-2 col-md-2 form-group">
-                                            <button type="submit" class="btn btn-success">Simpan</button>
+                                        <div class="position-relative row form-group"><label for="waktu"
+                                                class="col-sm-2 col-form-label">Link Map Lokasi</label>
+                                            <div class="col-sm-10"><input name="lokasi" id="lokasi"
+                                                    placeholder="Masukkan Lokasi Pariwisata" type="text"
+                                                    class="form-control" value="{{ $pariwisata->lokasi }}"></div>
                                         </div>
-                                </form>
-                                <div class="col-sm-10 offset-sm-1 col-md-2 form-group">
-                                    <button type="button" class="btn btn-danger" data-toggle="modal"
-                                        data-target="#{{$pariwisata->id_pariwisata}}">Hapus</button>
+                                        <div class="position-relative row form-group"><label for="youtube"
+                                                class="col-sm-2 col-form-label">Youtube</label>
+                                            <div class="col-sm-10"><input name="youtube" id="youtube"
+                                                    placeholder="Masukkan Youtube Jika Ada" type="text"
+                                                    class="form-control" value="{{ $pariwisata->youtube }}"></div>
+                                        </div>
+                                        <div class="position-relative row form-group"><label for="deskripsi"
+                                                class="col-sm-2 col-form-label">Deskripsi</label>
+                                            <div class="col-sm-10"><textarea name="deskripsi" id="deskripsi"
+                                                    class="form-control">{{ $pariwisata->deskripsi }}</textarea></div>
+                                        </div>
+                                        <div class="position-relative row form-group"><label for="foto"
+                                                class="col-sm-2 col-form-label">Foto</label>
+                                            <div class="col-sm-10"><input name="foto" id="foto" type="file"
+                                                    class="form-control-file">
+                                                <img src="{{asset('foto/pariwisata')}}/{{$pariwisata->foto}}"
+                                                    class="img-thumbnail">
+                                            </div>
+                                        </div>
+                                        <br>
+                                        <div class="position-relative row btn-group form-inline offset-md-3 col-md-5">
+                                            <div class="col-sm-10 offset-sm-2 col-md-2 form-group">
+                                                <button type="submit" class="btn btn-success">Simpan</button>
+                                            </div>
+                                    </form>
+                                    <div class="col-sm-10 offset-sm-1 col-md-2 form-group">
+                                        <button type="button" class="btn btn-danger" data-toggle="modal"
+                                            data-target="#{{$pariwisata->id_pariwisata}}">Hapus</button>
+                                    </div>
                                 </div>
+                                @endif
                             </div>
-                            @endif  
                             @php
                             $j++;
                             @endphp
@@ -205,12 +209,12 @@
         </div>
     </div>
 </div>
-</div>
 @endsection
 
 {{-- Modal Hapus  --}}
 @foreach ($data as $item)
-<div class="modal fade" id="{{$item->id_pariwisata}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="{{$item->id_pariwisata}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">

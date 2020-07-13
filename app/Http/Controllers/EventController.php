@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\m_event;
-use Alert;
 
 class EventController extends Controller
 {
@@ -26,6 +25,8 @@ class EventController extends Controller
         $data->waktu = $request['waktu'];
         $data->lokasi = $request['lokasi'];
         $data->deskripsi = $request['deskripsi'];
+        $data->penyelenggara = $request['penyelenggara'];
+        
         if($request->hasFile('foto')){
             $request->file('foto')->move('foto/event/', $request->file('foto')->getClientOriginalName());
             $data->foto = $request->file('foto')->getClientOriginalName();
@@ -48,6 +49,8 @@ class EventController extends Controller
         $data->waktu = $request['waktu'];
         $data->lokasi = $request['lokasi'];
         $data->deskripsi = $request['deskripsi'];
+        $data->penyelenggara = $request['penyelenggara'];
+        
         if($request->hasFile('foto')){
             $request->file('foto')->move('foto/event/', $request->file('foto')->getClientOriginalName());
             $data->foto = $request->file('foto')->getClientOriginalName();

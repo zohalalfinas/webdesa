@@ -40,7 +40,8 @@ class PariwisataController extends Controller
     public function show($id)
     {
         $data = m_pariwisata::find($id);
-        return view('pariwisata.detail', compact('data'));
+        $datas = m_pariwisata::get();
+        return view('pariwisata.detail', compact('data', 'datas'));
     }
 
     public function update(Request $request, $id)

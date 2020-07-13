@@ -7,7 +7,7 @@
                 <i class="pe-7s-car icon-gradient bg-mean-fruit">
                 </i>
             </div>
-            <div>Artikel COVID 19
+            <div>Infografik COVID 19
                 <div class="page-title-subheading">Desa Sumberejo
                 </div>
             </div>
@@ -29,26 +29,26 @@
                     </li>
                     <li class="nav-item">
                         <a role="tab" class="nav-link" id="tab-c1-1" data-toggle="tab" href="#tab-animated1-1">
-                            <span class="nav-text">Artikel</span>
+                            <span class="nav-text">Infografik</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a role="tab" class="nav-link" id="tab-c1-2" data-toggle="tab" href="#tab-animated1-2">
+                            <span class="nav-text">Grafik</span>
                         </a>
                     </li>
                 </ul>
                 <div class="tab-content">
                     <div class="tab-pane active" id="tab-animated1-0" role="tabpanel">
                         <br>
-                        <h5 class="card-title">TAMBAH ARTIKEL</h5>
+                        <h5 class="card-title">TAMBAH INFOGRAFIK</h5>
                         <div class="card-body">
-                            <form action="{{route('tambah.artikel')}}" method="post" enctype="multipart/form-data">
+                            <form action="{{route('tambah.infografik')}}" method="post" enctype="multipart/form-data">
                                 @csrf
                                 <div class="position-relative row form-group"><label for="judul"
-                                        class="col-sm-2 col-form-label">Judul Artikel</label>
+                                        class="col-sm-2 col-form-label">Judul Infografik</label>
                                     <div class="col-sm-10"><input name="judul" id="judul"
-                                            placeholder="Masukkan Judul Artikel" type="text" class="form-control"></div>
-                                </div>
-                                <div class="position-relative row form-group"><label for="deskripsi"
-                                    class="col-sm-2 col-form-label">Deskripsi</label>
-                                <div class="col-sm-10"><textarea name="deskripsi" id="deskripsi"
-                                        class="form-control"></textarea></div>
+                                            placeholder="Masukkan Judul Infografik" type="text" class="form-control"></div>
                                 </div>
                                 <div class="position-relative row form-group"><label for="foto"
                                         class="col-sm-2 col-form-label">Foto</label>
@@ -63,6 +63,34 @@
                             </form>
                         </div>
                     </div>
+                    <div class="tab-pane" id="tab-animated1-2" role="tabpanel">
+                        <br>
+                        <h5 class="card-title">GRAFIK COVID 19</h5>
+                        <div class="card-body">
+                            <form action="{{route('update.grafik' , $grafik->id_grafik)}}" method="post" enctype="multipart/form-data">
+                                @csrf
+                                <div class="position-relative row form-group"><label for="positif"
+                                        class="col-sm-2 col-form-label">Positif</label>
+                                    <div class="col-sm-10"><input name="positif" id="positif"
+                                    placeholder="Masukkan Jumlah Orang Yang Positif" type="number" class="form-control" value="{{ $grafik->positif }}"></div>
+                                </div>
+                                <div class="position-relative row form-group"><label for="sembuh"
+                                        class="col-sm-2 col-form-label">Sembuh</label>
+                                    <div class="col-sm-10"><input name="sembuh" id="sembuh"
+                                            placeholder="Masukkan Jumlah Orang Yang Sembuh" type="number" class="form-control" value="{{ $grafik->sembuh }}"></div>
+                                </div>
+                                <div class="position-relative row form-group"><label for="meninggal"
+                                        class="col-sm-2 col-form-label">Meninggal</label>
+                                    <div class="col-sm-10"><input name="meninggal" id="meninggal"
+                                            placeholder="Masukkan Jumlah Orang Yang Meninggal" type="number" class="form-control" value="{{ $grafik->meninggal }}"></div>
+                                </div>
+                                <br>
+                                <div class="col-sm-10">
+                                    <button class="btn btn-secondary" type="submit">Simpan</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
                     <div class="tab-pane" id="tab-animated1-1" role="tabpanel">
                         <div class="card-body">
                             <ul class="nav nav-tabs nav-justified">
@@ -71,11 +99,11 @@
                                 @endphp
                                 @foreach ($data as $tab)
                                 @if ( $i === 1)
-                                <li class="nav-item"><a data-toggle="tab" href="#tab-{{$tab->id_artikel}}"
-                                        class="active nav-link">Artikel {{$i}}</a></li>
+                                <li class="nav-item"><a data-toggle="tab" href="#tab-{{$tab->id_infografik}}"
+                                        class="active nav-link">Infografik {{$i}}</a></li>
                                 @else
-                                <li class="nav-item"><a data-toggle="tab" href="#tab-{{$tab->id_artikel}}"
-                                        class="nav-link">Artikel {{$i}}</a></li>
+                                <li class="nav-item"><a data-toggle="tab" href="#tab-{{$tab->id_infografik}}"
+                                        class="nav-link">Infografik {{$i}}</a></li>
                                 @endif
                                 @php
                                 $i++;
@@ -87,28 +115,23 @@
                                 @php
                                 $j = 1 ;
                                 @endphp
-                                @foreach ($data as $artikel)
+                                @foreach ($data as $infografik)
                                 @if ( $j === 1)
-                                <div class="tab-pane active" id="tab-{{$artikel->id_artikel}}" role="tabpanel">
-                                    <form action="{{ route('update.artikel' , $artikel->id_artikel)}}"
+                                <div class="tab-pane active" id="tab-{{$infografik->id_infografik}}" role="tabpanel">
+                                    <form action="{{ route('update.infografik' , $infografik->id_infografik)}}"
                                         method="post" enctype="multipart/form-data">
                                         {{csrf_field()}}{{method_field('PATCH')}}
                                         <div class="position-relative row form-group"><label for="judul"
-                                                class="col-sm-2 col-form-label">Judul Artikel</label>
+                                                class="col-sm-2 col-form-label">Judul Infografik</label>
                                             <div class="col-sm-10"><input name="judul" id="judul"
-                                                    placeholder="Masukkan Nama Artikel" type="text"
-                                                    class="form-control" value="{{ $artikel->judul }}"></div>
-                                        </div>
-                                        <div class="position-relative row form-group"><label for="deskripsi"
-                                            class="col-sm-2 col-form-label">Deskripsi</label>
-                                        <div class="col-sm-10"><textarea name="deskripsi" id="deskripsi"
-                                                class="form-control">{{ $artikel->deskripsi }}</textarea></div>
+                                                    placeholder="Masukkan Nama Infografik" type="text"
+                                                    class="form-control" value="{{ $infografik->judul }}"></div>
                                         </div>
                                         <div class="position-relative row form-group"><label for="foto"
                                                 class="col-sm-2 col-form-label">Foto</label>
                                             <div class="col-sm-10"><input name="foto" id="foto" type="file"
                                                     class="form-control-file">
-                                                <img src="{{asset('foto/artikel')}}/{{$artikel->foto}}"
+                                                <img src="{{asset('foto/infografik')}}/{{$infografik->foto}}"
                                                     class="img-thumbnail">
                                             </div>
                                         </div>
@@ -120,33 +143,28 @@
                                     </form>
                                     <div class="col-sm-10 offset-sm-1 col-md-2 form-group">
                                         <button type="button" class="btn btn-danger" data-toggle="modal"
-                                            data-target="#{{$artikel->id_artikel}}">Hapus</button>
+                                            data-target="#{{$infografik->id_infografik}}">Hapus</button>
                                     </div>
                                 </div>
                                 @else
-                                <div class="tab-pane" id="tab-{{$artikel->id_artikel}}" role="tabpanel">
-                                    <form action="{{ route('update.artikel' , $artikel->id_artikel)}}"
+                                <div class="tab-pane" id="tab-{{$infografik->id_infografik}}" role="tabpanel">
+                                    <form action="{{ route('update.infografik' , $infografik->id_infografik)}}"
                                         method="post" enctype="multipart/form-data">
                                         {{csrf_field()}}{{method_field('PATCH')}}
-                                        <div class="position-relative row form-group"><label for="judul"
-                                            class="col-sm-2 col-form-label">Judul Artikel</label>
-                                        <div class="col-sm-10"><input name="judul" id="judul"
-                                                placeholder="Masukkan Nama Artikel" type="text"
-                                                class="form-control" value="{{ $artikel->judul }}"></div>
-                                    </div>
-                                    <div class="position-relative row form-group"><label for="deskripsi"
-                                        class="col-sm-2 col-form-label">Deskripsi</label>
-                                    <div class="col-sm-10"><textarea name="deskripsi" id="deskripsi"
-                                            class="form-control">{{ $artikel->deskripsi }}</textarea></div>
-                                    </div>
-                                    <div class="position-relative row form-group"><label for="foto"
-                                            class="col-sm-2 col-form-label">Foto</label>
-                                        <div class="col-sm-10"><input name="foto" id="foto" type="file"
-                                                class="form-control-file">
-                                            <img src="{{asset('foto/artikel')}}/{{$artikel->foto}}"
-                                                class="img-thumbnail">
+                                        <div class="position-relative row form-group"><label for="nama"
+                                                class="col-sm-2 col-form-label">Nama Infografik</label>
+                                            <div class="col-sm-10"><input name="nama" id="nama"
+                                                    placeholder="Masukkan Nama Inforgrafik" type="text" class="form-control"
+                                                    value="{{ $infografik->judul }}"></div>
                                         </div>
-                                    </div>
+                                        <div class="position-relative row form-group"><label for="foto"
+                                                class="col-sm-2 col-form-label">Foto</label>
+                                            <div class="col-sm-10"><input name="foto" id="foto" type="file"
+                                                    class="form-control-file">
+                                                <img src="{{asset('foto/infografik')}}/{{$infografik->foto}}"
+                                                    class="img-thumbnail">
+                                            </div>
+                                        </div>
                                         <br>
                                         <div class="position-relative row btn-group form-inline offset-md-3 col-md-5">
                                             <div class="col-sm-10 offset-sm-2 col-md-2 form-group">
@@ -155,7 +173,7 @@
                                     </form>
                                     <div class="col-sm-10 offset-sm-1 col-md-2 form-group">
                                         <button type="button" class="btn btn-danger" data-toggle="modal"
-                                            data-target="#{{$artikel->id_artikel}}">Hapus</button>
+                                            data-target="#{{$infografik->id_infografik}}">Hapus</button>
                                     </div>
                                 </div>
                                 @endif
@@ -166,6 +184,7 @@
                             @endforeach
                         </div>
                     </div>
+                    
                 </div>
             </div>
         </div>
@@ -174,21 +193,21 @@
 @endsection
 
 @foreach ($data as $item)
-<div class="modal fade" id="{{$item->id_artikel}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+<div class="modal fade" id="{{$item->id_infografik}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
     aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Hapus Artikel</h5>
+                <h5 class="modal-title" id="exampleModalLabel">Hapus Infografik</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
             <div class="modal-body">
-                Apakah anda yakin ingin menghapus artikel ini ?
+                Apakah anda yakin ingin menghapus inforgrafik ini ?
             </div>
             <div class="modal-footer">
-                <form action="{{ route('delete.artikel' , $item->id_artikel)}}" method="POST">
+                <form action="{{ route('delete.infografik' , $item->id_infografik)}}" method="POST">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                     {{csrf_field()}}{{method_field('DELETE')}}
                     <button type="submit" class="btn btn-danger">Hapus</button>

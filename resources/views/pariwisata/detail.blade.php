@@ -157,42 +157,18 @@
                   <aside class="single_sidebar_widget instagram_feeds">
                      <a href=""><h4 class="widget_title">Galeri Pariwisata</h4></a> 
                      <ul class="instagram_row flex-wrap">
+                        @foreach ($datas as $item)
                         <li>
-                           <a href="#">
-                              <img class="img-fluid" src="{{asset('aznews/assets/img/post/post_5.png')}}" alt="">
+                           <a href="{{url('pariwisata/detail' , $item->id_pariwisata)}}">
+                              <img class="img-fluid" src="{{asset('foto/pariwisata')}}/{{$item->foto}}" alt="">
                            </a>
                         </li>
-                        <li>
-                           <a href="#">
-                              <img class="img-fluid" src="{{asset('aznews/assets/img/post/post_6.png')}}" alt="">
-                           </a>
-                        </li>
-                        <li>
-                           <a href="#">
-                              <img class="img-fluid" src="{{asset('aznews/assets/img/post/post_7.png')}}" alt="">
-                           </a>
-                        </li>
-                        <li>
-                           <a href="#">
-                              <img class="img-fluid" src="{{asset('aznews/assets/img/post/post_8.png')}}" alt="">
-                           </a>
-                        </li>
-                        <li>
-                           <a href="#">
-                              <img class="img-fluid" src="{{asset('aznews/assets/img/post/post_9.png')}}" alt="">
-                           </a>
-                        </li>
-                        <li>
-                           <a href="#">
-                              <img class="img-fluid" src="{{asset('aznews/assets/img/post/post_10.png')}}" alt="">
-                           </a>
-                        </li>
+                        @endforeach
                      </ul>
                   </aside>
                </div>
             </div>
          </div>                  
-        
       </div>
    </section>
    <!--================ Blog Area end =================-->
