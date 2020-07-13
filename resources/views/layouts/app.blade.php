@@ -7,7 +7,7 @@
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="manifest" href="site.webmanifest">
-		<link rel="shortcut icon" type="image/x-icon" href="{{asset('aznews/assets/img/logo/kab.png')}}">
+		<link rel="shortcut icon" type="image/x-icon" href="{{asset('aznews/assets/img/logo/pemkab.png')}}">
 
 		<!-- CSS here -->
             <link rel="stylesheet" href="{{ asset('aznews/assets/css/bootstrap.min.css')}}">
@@ -44,6 +44,18 @@
         }
         .carousel-item{
             height:500px;
+        }
+        .btn-custom{
+            width: 100px;
+            background-color: #f27420;
+            border: none;
+            height: 30px;
+            border-radius: 5px;  
+        }
+        .btn-custom:hover{
+            background-color:transparent;
+            color: #f27420;
+            cursor:pointer;
         }
         </style>
    </head>

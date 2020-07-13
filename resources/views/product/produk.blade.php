@@ -1,94 +1,62 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container mt-5">
-<div class="trending-bottom">
-    <div class="section-tittle mb-30">
-        <h3>Produk sumberejo</h3>
-     </div>
-    <div class="row">
-        <div class="col-lg-4">
-        <div class="single-bottom mb-35">
-            <div class="trend-bottom-img mb-30">
-                <img src="{{asset('aznews/assets/img/trending/trending_bottom1.jpg')}}" alt="">
-                
-            </div>
-            <div class="trend-bottom-cap">
-                <a href="">
-                    <h5 style="label">lele goreng</h5>
-                </a>
-                <h4 class="cap"><a  href="{{url('produk/detail')}}">Get the Illusion of Fuller Lashes by “Mascng.”</a></h4>
+<main>
+    <aside>
+        <div style="width:50%;" class="container">
+            <div class="py-5 text-center">
+                <img style="width:10%;" src="{{asset('aznews/assets/img/logo/pemkab.png')}}" alt="" class="d-block mx-auto mb-4">
+                <h2>BUMDES</h2>
+                <p>introduction about all product BUMDES Lorem ipsum dolor sit amet, consectetur adipisicing elit. Provident, corporis obcaecati eligendi consequuntur earum autem </p>
+                <div class="border-bottom"></div>
             </div>
         </div>
-        </div>
-        <div class="col-lg-4">
-            <div class="single-bottom mb-35">
-                <div class="trend-bottom-img mb-30">
-                    <img src="{{asset('aznews/assets/img/trending/trending_bottom2.jpg')}}" alt="">
-                </div>
-                <div class="trend-bottom-cap">
-                    <a href=""  >
-                        <h5 style="label">lele goreng</h5>
-                    </a>
-                    <h4 class="cap"><a  href="{{url('produk/detail')}}">Get the Illusion of Fuller Lashes by “Mascng.”</a></h4>
-                </div>
-            </div>
-        </div>
-            <div class="col-lg-4">
-                <div class="single-bottom mb-35">
-                    <div class="trend-bottom-img mb-30">
-                        <img src="{{asset('aznews/assets/img/trending/trending_bottom3.jpg')}}" alt="">
-                    </div>
-                    <div class="trend-bottom-cap">
-                        <a href=""  >
-                            <h5 style="label">lele goreng</h5>
-                        </a>
-                        <h4 class="cap"><a  href="{{ url('produk/detail')}}">Get the Illusion of Fuller Lashes by “Mascng.”</a></h4>
+    </aside>
+    <div class="album py-5 bg-light">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 mb-5">
+                    <div style="background-color:transparent;border:none;" class="card mb-4 shadow-sm">
+                        <img src="{{asset('aznews/assets/img/trending/trending_bottom3.jpg')}}" class="rounded mx-auto d-block mt-2 shadow-lg" alt="Responsive image">
+                        <div class="card-body">
+                            <center>
+                                <h4 class="card-text">Nugget lele</h4>
+                                <a href="{{url('produk/detail')}}">
+                                    <button type="button" class="btn-custom">detail</button>
+                                </a>
+                            </center>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="col-lg-4">
-                <div class="single-bottom mb-35">
-                    <div class="trend-bottom-img mb-30">
-                        <img src="{{asset('aznews/assets/img/trending/trending_bottom3.jpg')}}" alt="">
-                    </div>
-                    <div class="trend-bottom-cap">
-                        <a href=""  >
-                            <h5 style="label">lele goreng</h5>
-                        </a>
-                        <h4 class="cap"><a  href="{{url('produk/detail')}}">Get the Illusion of Fuller Lashes by “Mascng.”</a></h4>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4">
-                <div class="single-bottom mb-35">
-                    <div class="trend-bottom-img mb-30">
-                        <img src="{{asset('aznews/assets/img/trending/trending_bottom3.jpg')}}" alt="">
-                    </div>
-                    <div class="trend-bottom-cap">
-                        <a href=""  >
-                            <h5 style="label">lele goreng</h5>
-                        </a>
-                        <h4 class="cap"><a  href="{{url('produk/detail')}}">Get the Illusion of Fuller Lashes by “Mascng.”</a></h4>
+                <div class="col-md-4 mb-5">
+                    <div style="background-color:transparent;border:none;" class="card mb-4 shadow-sm">
+                        <img src="{{asset('aznews/assets/img/trending/trending_bottom3.jpg')}}" class="rounded mx-auto d-block mt-2 shadow-lg" alt="Responsive image">
+                        <div class="card-body">
+                            <center>
+                                <h4 class="card-text">Nugget lele</h4>
+                                <a href="{{url('produk/detail')}}">
+                                    <button type="button" class="btn-custom">detail</button>
+                                </a>
+                            </center>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="col-lg-4">
-                <div class="single-bottom mb-35">
-                    <div class="trend-bottom-img mb-30">
-                        <img src="{{asset('aznews/assets/img/trending/trending_bottom3.jpg')}}" alt="">
-                    </div>
-                    <div class="trend-bottom-cap">
-                        <a href=""  >
-                            <h5 style="label">lele goreng</h5>
-                        </a>
-                        <h4 class="cap"><a  href="{{url('produk/detail')}}">Get the Illusion of Fuller Lashes by “Mascng.”</a></h4>
+                <div class="col-md-4 mb-5">
+                    <div style="background-color:transparent;border:none;" class="card mb-4 shadow-sm">
+                        <img src="{{asset('aznews/assets/img/trending/trending_bottom3.jpg')}}" class="rounded mx-auto d-block mt-2 shadow-lg" alt="Responsive image">
+                        <div class="card-body">
+                            <center>
+                                <h4 class="card-text">Nugget lele</h4>
+                                <a href="{{url('produk/detail')}}">
+                                    <button type="button" class="btn-custom">detail</button>
+                                </a>
+                            </center>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
-</div>
+</main>
 
 @endsection

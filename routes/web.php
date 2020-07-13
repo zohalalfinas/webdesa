@@ -22,3 +22,5 @@ Route::get('/pariwisata', 'PariwisataController@index');
 Route::get('/pariwisata/detail', 'PariwisataController@show');
 Route::get('/covid', 'CovidController@index');
 Route::get('/covid/video', 'CovidController@video');
+Route::get('/desa', 'DesaController@index');
+Route::get('/desa/visi', 'DesaController@visi');

@@ -2,64 +2,53 @@
         <!-- Header Start -->
        <div class="header-area">
             <div class="main-header ">
-               
-                <!-- <div class="header-mid d-none d-md-block">
-                   <div class="container">
-                        <div class="row d-flex align-items-center">
-                            <div class="col-xl-3 col-lg-3 col-md-3">
-                                <div class="logo">
-                                    <a href="index.html"><img style="width:30%;" src="{{asset('aznews/assets/img/logo/kab.png')}}" alt=""></a>
-                                </div>
-                            </div>
-                            <div class="col-xl-9 col-lg-9 col-md-9">
-                                <div class="header-banner f-right ">
-                                    <img src="{{asset('aznews/assets/img/hero/header_card.jpg')}}" alt="">
-                                </div>
-                            </div>
-                        </div>
-                   </div>
-                </div> -->
                <div class="header-bottom header-sticky shadow">
                     <div class="container ">
-                        <div class="row align-items-center">
-                                <!-- sticky -->
-                                    <!-- <div class="sticky-logo">
-                                        <a href="index.html"><img style="width:9%;" src="{{asset('aznews/assets/img/logo/kab.png')}}" alt=""></a>
-                                    </div> -->
-                                <!-- Main-menu -->
-                                <div class="main-menu d-none d-md-block">
-                                    <nav class="">                  
-                                        <ul id="navigation sticky-logo">
-                                        <a href="index.html"><img style="width:7%;" src="{{asset('aznews/assets/img/logo/kab.png')}}" alt="" ></a>
-                                            <li> <h3 style="font-family:arkipelago;font-size:50px;margin-left:10px;">Sumberejo</h3> </li>
-                                            <li style="margin-left:31%;"><a href="{{url('/')}}">Home</a></li>
-                                            <li><a href="#">Profil desa</a>
-                                                <ul class="submenu">
-                                                    <li><a href="elements.html">sejarah</a></li>
-                                                    <li><a href="blog.html">visi & misi</a></li>
-                                                    <li><a href="single-blog.html">struktur</a></li>
-                                                    <li><a href="details.html">Logo</a></li>
-                                                </ul>
-                                            </li>
-                                            <li><a href="{{url('produk')}}">Produk</a></li>
-                                            <li><a href="{{url('event')}}">Event</a></li>
-                                            <li><a href="{{url('pariwisata')}}">Pariwisata</a></li>
-                                            <li><a href="{{url('covid')}}">Covid</a></li>
-                                          
-                                        </ul>
-                                    </nav>
-                                </div>
-                         
-                            <!-- Mobile Menu -->
-                            <div class="col-12">
-                                <div class="mobile_menu d-block d-md-none">
+                        <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white ">
+                                <a class="navbar-brand" href="#">
+                                    <img style="width:160px;height:auto;" src="{{asset('aznews/assets/img/logo/kab.png')}}" alt="" loading="lazy">
+                                </a>
+                                <h3 class="my-0 mr-md-auto font-weight-normal" style="font-family:arkipelago;font-size:44px;"></h3>
+                            <nav style="background-color:white;" class="navbar navbar-expand-lg navbar-light my-2 my-md-0 mr-md-3">
+                                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                                    <span style="margin-right:300px;" class="navbar-toggler-icon"></span>
+                                </button>
 
+                                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                                    <ul class="navbar-nav mr-auto ">
+                                    <li class="nav-item  ">
+                                        <a class="nav-link " href="{{url('/')}}">Home <span class="sr-only">(current)</span></a>
+                                    </li>
+                                    <li class="nav-item dropdown">
+                                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        profil desa
+                                        </a>
+                                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                        <a class="dropdown-item" href="{{url('desa')}}">Sejarah</a>
+                                        <a class="dropdown-item" href="{{url('desa/visi')}}">Visi & Misi</a>
+                                        <a class="dropdown-item" href="#">struktur</a>
+                                        </div>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="{{url('produk')}}">Produk</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="{{url('event')}}">Event</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="{{url('pariwisata')}}">Pariwisata</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="{{url('covid')}}">Covid-19</a>
+                                    </li>
+                                    </ul>
+                                   
                                 </div>
-                            </div>
+                            </nav>
                         </div>
                     </div>
                </div>
             </div>
-       </div>
+        </div>
         <!-- Header End -->
     </header>
