@@ -9,6 +9,18 @@
                 </a>
             </li>
             <li>
+                <a href="{{route('profil.admin')}}">
+                    <i class="metismenu-icon pe-7s-note2"></i>
+                    Profil
+                </a>
+            </li>
+            <li>
+                <a href="{{route('struktur.admin')}}">
+                    <i class="metismenu-icon pe-7s-note2"></i>
+                    Struktur
+                </a>
+            </li>
+            <li>
                 <a href="{{route('event.admin')}}">
                     <i class="metismenu-icon pe-7s-note2"></i>
                     Event
@@ -52,6 +64,12 @@
                         </a>
                     </li>
                 </ul>
+            </li>
+            <li>
+                <a href="{{ url('/logout') }}">
+                    <i class="metismenu-icon pe-7s-box1"></i>
+                    Logout
+                </a>
             </li>
         </ul>
     </div>

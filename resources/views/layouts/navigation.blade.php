@@ -26,7 +26,7 @@
                                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                                         <a class="dropdown-item" href="{{url('desa')}}">Sejarah</a>
                                         <a class="dropdown-item" href="{{url('desa/visi')}}">Visi & Misi</a>
-                                        <a class="dropdown-item" href="#">struktur</a>
+                                        <a class="dropdown-item" href="{{url('desa/struktur')}}">struktur</a>
                                         </div>
                                     </li>
                                     <li class="nav-item">

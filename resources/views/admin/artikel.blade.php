@@ -42,18 +42,18 @@
                                 @csrf
                                 <div class="position-relative row form-group"><label for="judul"
                                         class="col-sm-2 col-form-label">Judul Artikel</label>
-                                    <div class="col-sm-10"><input name="judul" id="judul"
+                                    <div class="col-sm-10"><input required name="judul" id="judul"
                                             placeholder="Masukkan Judul Artikel" type="text" class="form-control"></div>
                                 </div>
                                 <div class="position-relative row form-group"><label for="deskripsi"
                                     class="col-sm-2 col-form-label">Deskripsi</label>
-                                <div class="col-sm-10"><textarea name="deskripsi" id="deskripsi"
+                                <div class="col-sm-10"><textarea required name="deskripsi" id="deskripsi"
                                         class="form-control"></textarea></div>
                                 </div>
                                 <div class="position-relative row form-group"><label for="foto"
                                         class="col-sm-2 col-form-label">Foto</label>
-                                    <div class="col-sm-10"><input name="foto" id="foto" type="file"
-                                            class="form-control-file">
+                                    <div class="col-sm-10"><input required name="foto" id="foto" type="file"
+                                            class="form-control-file"  accept="image/*">
                                     </div>
                                 </div>
                                 <br>
@@ -95,19 +95,19 @@
                                         {{csrf_field()}}{{method_field('PATCH')}}
                                         <div class="position-relative row form-group"><label for="judul"
                                                 class="col-sm-2 col-form-label">Judul Artikel</label>
-                                            <div class="col-sm-10"><input name="judul" id="judul"
+                                            <div class="col-sm-10"><input required name="judul" id="judul"
                                                     placeholder="Masukkan Nama Artikel" type="text"
                                                     class="form-control" value="{{ $artikel->judul }}"></div>
                                         </div>
                                         <div class="position-relative row form-group"><label for="deskripsi"
                                             class="col-sm-2 col-form-label">Deskripsi</label>
-                                        <div class="col-sm-10"><textarea name="deskripsi" id="deskripsi"
-                                                class="form-control">{{ $artikel->deskripsi }}</textarea></div>
+                                        <div class="col-sm-10"><textarea required name="deskripsi" id="deskripsi"
+                                                class="form-control" >{{ $artikel->deskripsi }}</textarea></div>
                                         </div>
                                         <div class="position-relative row form-group"><label for="foto"
                                                 class="col-sm-2 col-form-label">Foto</label>
                                             <div class="col-sm-10"><input name="foto" id="foto" type="file"
-                                                    class="form-control-file">
+                                                    class="form-control-file"  accept="image/*">
                                                 <img src="{{asset('foto/artikel')}}/{{$artikel->foto}}"
                                                     class="img-thumbnail">
                                             </div>
@@ -130,19 +130,19 @@
                                         {{csrf_field()}}{{method_field('PATCH')}}
                                         <div class="position-relative row form-group"><label for="judul"
                                             class="col-sm-2 col-form-label">Judul Artikel</label>
-                                        <div class="col-sm-10"><input name="judul" id="judul"
+                                        <div class="col-sm-10"><input required name="judul" id="judul"
                                                 placeholder="Masukkan Nama Artikel" type="text"
                                                 class="form-control" value="{{ $artikel->judul }}"></div>
                                     </div>
                                     <div class="position-relative row form-group"><label for="deskripsi"
                                         class="col-sm-2 col-form-label">Deskripsi</label>
-                                    <div class="col-sm-10"><textarea name="deskripsi" id="deskripsi"
+                                    <div class="col-sm-10"><textarea required name="deskripsi" id="deskripsi"
                                             class="form-control">{{ $artikel->deskripsi }}</textarea></div>
                                     </div>
                                     <div class="position-relative row form-group"><label for="foto"
                                             class="col-sm-2 col-form-label">Foto</label>
                                         <div class="col-sm-10"><input name="foto" id="foto" type="file"
-                                                class="form-control-file">
+                                                class="form-control-file"  accept="image/*">
                                             <img src="{{asset('foto/artikel')}}/{{$artikel->foto}}"
                                                 class="img-thumbnail">
                                         </div>

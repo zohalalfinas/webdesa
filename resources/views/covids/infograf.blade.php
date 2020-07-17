@@ -9,8 +9,9 @@
             <div class="col-lg-4 ">
                 <div class="single-bottom mb-35">
                     <div class="trend-bottom-img mb-30">
-                        <a data-toggle="modal" data-target="#image{{$infograf->id_infografik}}"><img style="width:50%;"
-                                src="{{asset('foto/infografik')}}/{{$infograf->foto}}" alt=""></a>
+                        <a data-toggle="modal" data-target="#image{{$infograf->id_infografik}}"><img
+                                src="{{asset('foto/infografik')}}/{{$infograf->foto}}" alt="" style="object-fit: none;object-position: center;
+                                                    width: 100%;max-height: 300px;margin-bottom: 1rem;"></a>
                     </div>
                     <div class="trend-bottom-cap">
                         <span class="color1">{{ $infograf->judul }}</span>
@@ -30,7 +31,7 @@
         <div class="modal-dialog modal-lg" role="document">
                 <div class="modal-content">
                     <div class="modal-body mb-0 p-0">
-                        <img src="{{asset('foto/infografik')}}/{{$infograf->foto}}" alt="">
+                        <img src="{{asset('foto/infografik')}}/{{$infograf->foto}}" alt="" class="img-fluid">
                     </div>
                     <div class="modal-footer justify-content-center">
                         <button type="button" class="btn btn-outline-primary btn-rounded btn-md ml-4"
@@ -41,4 +42,5 @@
         </div>
     </div>
 </div>
+@endforeach
 @endsection

@@ -1,6 +1,7 @@
-@extends('layouts.app')
+@extends('layouts.apps')
 
 @section('content')
+@foreach ($data as $item)
      <!--================Blog Area =================-->
    <section class="blog_area single-post-area section-padding">
       <div class="container">
@@ -8,48 +9,28 @@
             <div class="col-lg-8 posts-list">
                <div class="single-post">
                   <div class="feature-img">
-                     <img class="img-fluid" src="{{asset('aznews/assets/img/blog/single_blog_1.png')}}" alt="">
+                     <img class="img-fluid" src="{{asset('foto/profil')}}/{{$item->foto}}" alt="">
                   </div>
                   <div class="blog_details">
+                     @if($item->visi != null)
                       <center>
                           <h2>visi
                           </h2>
                       </center>
                       
                       <p class="excert">
-                          MCSE boot camps have its supporters and its detractors. Some people do not understand why you
-                          should have to spend money on boot camp when you can get the MCSE study materials yourself at a
-                          fraction of the camp price. However, who has the willpower
+                          {{$item->visi}}
                         </p>
+                     @endif
+                     @if($item->misi != null)
                         <center>
                             <h2>Misi
                             </h2>
                         </center>
                         <p>
-                            MCSE boot camps have its supporters and its detractors. Some people do not understand why you
-                            should have to spend money on boot camp when you can get the MCSE study materials yourself at a
-                            fraction of the camp price. However, who has the willpower to actually sit through a
-                            self-imposed MCSE training. who has the willpower to actually
+                           {{$item->misi}}
                      </p>
-                     <div class="quote-wrapper">
-                        <div class="quotes">
-                           MCSE boot camps have its supporters and its detractors. Some people do not understand why you
-                           should have to spend money on boot camp when you can get the MCSE study materials yourself at
-                           a fraction of the camp price. However, who has the willpower to actually sit through a
-                           self-imposed MCSE training.
-                        </div>
-                     </div>
-                     <p>
-                        MCSE boot camps have its supporters and its detractors. Some people do not understand why you
-                        should have to spend money on boot camp when you can get the MCSE study materials yourself at a
-                        fraction of the camp price. However, who has the willpower
-                     </p>
-                     <p>
-                        MCSE boot camps have its supporters and its detractors. Some people do not understand why you
-                        should have to spend money on boot camp when you can get the MCSE study materials yourself at a
-                        fraction of the camp price. However, who has the willpower to actually sit through a
-                        self-imposed MCSE training. who has the willpower to actually
-                     </p>
+                     @endif
                   </div>
                </div>
               
@@ -103,5 +84,5 @@
       </div>
    </section>
    <!--================ Blog Area end =================-->
-
+@endforeach
 @endsection

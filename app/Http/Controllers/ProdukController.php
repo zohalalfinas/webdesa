@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\m_produk;
 
 class ProdukController extends Controller
 {
@@ -13,75 +14,50 @@ class ProdukController extends Controller
      */
     public function index()
     {
-        return view('product.produk');
+        $data = m_produk::get();
+        return view('product.produk', compact('data'));
     }
     public function produk(){
-        return view('admin.produk');
+        $data = m_produk::get();
+        return view('admin.produk', compact('data'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
     public function store(Request $request)
     {
-        //
+        $data = new m_produk;
+        $data->judul = $request['judul'];
+        $data->deskripsi = $request['deskripsi'];
+        if($request->hasFile('foto')){
+            $request->file('foto')->move('foto/produk/', $request->file('foto')->getClientOriginalName());
+            $data->foto = $request->file('foto')->getClientOriginalName();
+            }
+        $data->save();
+        return back()->with('success','produk Berhasil Ditambah');
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show()
+    public function show($id)
     {
-        return view('product.detail');
+         $data = m_produk::find($id);
+         $datas = m_produk::get();
+        return view('product.detail', compact('data', 'datas'));
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function update(Request $request, $id)
     {
-        //
+        $data = m_produk::find($id);
+        $data->judul = $request['judul'];
+        $data->deskripsi = $request['deskripsi'];
+        if($request->hasFile('foto')){
+            $request->file('foto')->move('foto/produk/', $request->file('foto')->getClientOriginalName());
+            $data->foto = $request->file('foto')->getClientOriginalName();
+            }
+        $data->save();
+        return back()->with('success','produk Berhasil Ditambah');
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function destroy($id)
     {
-        //
+        $data = m_produk::find($id)->delete();
+        return back()->with('success','produk Berhasil Dihapus');
     }
 }

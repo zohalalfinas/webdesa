@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.apps')
 
 @section('content')
 <main>
@@ -55,7 +55,7 @@
                         @foreach ($data as $pariwisata)
                         <article class="blog_item">
                             <div class="blog_item_img">
-                                <img class="card-img rounded-0" src="{{asset('foto/event')}}/{{$pariwisata->foto}}" alt="">
+                                <img class="card-img rounded-0" src="{{asset('foto/pariwisata')}}/{{$pariwisata->foto}}" alt="">
                                 <a href="{{url('pariwisata/detail' , $pariwisata->id_pariwisata)}}" class="blog_item_date">
                                     <p>Detail</p>
                                 </a>

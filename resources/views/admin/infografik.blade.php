@@ -32,11 +32,6 @@
                             <span class="nav-text">Infografik</span>
                         </a>
                     </li>
-                    <li class="nav-item">
-                        <a role="tab" class="nav-link" id="tab-c1-2" data-toggle="tab" href="#tab-animated1-2">
-                            <span class="nav-text">Grafik</span>
-                        </a>
-                    </li>
                 </ul>
                 <div class="tab-content">
                     <div class="tab-pane active" id="tab-animated1-0" role="tabpanel">
@@ -53,40 +48,12 @@
                                 <div class="position-relative row form-group"><label for="foto"
                                         class="col-sm-2 col-form-label">Foto</label>
                                     <div class="col-sm-10"><input name="foto" id="foto" type="file"
-                                            class="form-control-file">
+                                            class="form-control-file" accept="image/*">
                                     </div>
                                 </div>
                                 <br>
                                 <div class="col-sm-10">
                                     <button class="btn btn-secondary" type="submit">Submit</button>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                    <div class="tab-pane" id="tab-animated1-2" role="tabpanel">
-                        <br>
-                        <h5 class="card-title">GRAFIK COVID 19</h5>
-                        <div class="card-body">
-                            <form action="{{route('update.grafik' , $grafik->id_grafik)}}" method="post" enctype="multipart/form-data">
-                                @csrf
-                                <div class="position-relative row form-group"><label for="positif"
-                                        class="col-sm-2 col-form-label">Positif</label>
-                                    <div class="col-sm-10"><input name="positif" id="positif"
-                                    placeholder="Masukkan Jumlah Orang Yang Positif" type="number" class="form-control" value="{{ $grafik->positif }}"></div>
-                                </div>
-                                <div class="position-relative row form-group"><label for="sembuh"
-                                        class="col-sm-2 col-form-label">Sembuh</label>
-                                    <div class="col-sm-10"><input name="sembuh" id="sembuh"
-                                            placeholder="Masukkan Jumlah Orang Yang Sembuh" type="number" class="form-control" value="{{ $grafik->sembuh }}"></div>
-                                </div>
-                                <div class="position-relative row form-group"><label for="meninggal"
-                                        class="col-sm-2 col-form-label">Meninggal</label>
-                                    <div class="col-sm-10"><input name="meninggal" id="meninggal"
-                                            placeholder="Masukkan Jumlah Orang Yang Meninggal" type="number" class="form-control" value="{{ $grafik->meninggal }}"></div>
-                                </div>
-                                <br>
-                                <div class="col-sm-10">
-                                    <button class="btn btn-secondary" type="submit">Simpan</button>
                                 </div>
                             </form>
                         </div>
@@ -130,7 +97,7 @@
                                         <div class="position-relative row form-group"><label for="foto"
                                                 class="col-sm-2 col-form-label">Foto</label>
                                             <div class="col-sm-10"><input name="foto" id="foto" type="file"
-                                                    class="form-control-file">
+                                                    class="form-control-file" accept="image/*">
                                                 <img src="{{asset('foto/infografik')}}/{{$infografik->foto}}"
                                                     class="img-thumbnail">
                                             </div>
@@ -160,7 +127,7 @@
                                         <div class="position-relative row form-group"><label for="foto"
                                                 class="col-sm-2 col-form-label">Foto</label>
                                             <div class="col-sm-10"><input name="foto" id="foto" type="file"
-                                                    class="form-control-file">
+                                                    class="form-control-file" accept="image/*">
                                                 <img src="{{asset('foto/infografik')}}/{{$infografik->foto}}"
                                                     class="img-thumbnail">
                                             </div>
