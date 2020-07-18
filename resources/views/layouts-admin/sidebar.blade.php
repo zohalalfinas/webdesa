@@ -9,6 +9,12 @@
                 </a>
             </li>
             <li>
+                <a href="{{route('user.admin')}}">
+                    <i class="metismenu-icon pe-7s-rocket"></i>
+                    User
+                </a>
+            </li>
+            <li>
                 <a href="{{route('profil.admin')}}">
                     <i class="metismenu-icon pe-7s-note2"></i>
                     Profil
