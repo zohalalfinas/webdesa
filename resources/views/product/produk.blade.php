@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.apps')
 
 @section('content')
 <main>
@@ -15,45 +15,21 @@
     <div class="album py-5 bg-light">
         <div class="container">
             <div class="row">
+                @foreach ($data as $produk)
                 <div class="col-md-4 mb-5">
                     <div style="background-color:transparent;border:none;" class="card mb-4 shadow-sm">
-                        <img src="{{asset('aznews/assets/img/trending/trending_bottom3.jpg')}}" class="rounded mx-auto d-block mt-2 shadow-lg" alt="Responsive image">
+                        <img src="{{asset('foto/produk')}}/{{$produk->foto}}" class="rounded mx-auto d-block mt-2 shadow-lg" alt="Responsive image" width="50%">
                         <div class="card-body">
                             <center>
-                                <h4 class="card-text">Nugget lele</h4>
-                                <a href="{{url('produk/detail')}}">
-                                    <button type="button" class="btn-custom">detail</button>
+                                <h4 class="card-text">{{$produk->judul}}</h4>
+                                <a href="{{url('produk/detail' , $produk->id_produk)}}">
+                                    <button type="button" class="btn-custom">Detail</button>
                                 </a>
                             </center>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4 mb-5">
-                    <div style="background-color:transparent;border:none;" class="card mb-4 shadow-sm">
-                        <img src="{{asset('aznews/assets/img/trending/trending_bottom3.jpg')}}" class="rounded mx-auto d-block mt-2 shadow-lg" alt="Responsive image">
-                        <div class="card-body">
-                            <center>
-                                <h4 class="card-text">Nugget lele</h4>
-                                <a href="{{url('produk/detail')}}">
-                                    <button type="button" class="btn-custom">detail</button>
-                                </a>
-                            </center>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 mb-5">
-                    <div style="background-color:transparent;border:none;" class="card mb-4 shadow-sm">
-                        <img src="{{asset('aznews/assets/img/trending/trending_bottom3.jpg')}}" class="rounded mx-auto d-block mt-2 shadow-lg" alt="Responsive image">
-                        <div class="card-body">
-                            <center>
-                                <h4 class="card-text">Nugget lele</h4>
-                                <a href="{{url('produk/detail')}}">
-                                    <button type="button" class="btn-custom">detail</button>
-                                </a>
-                            </center>
-                        </div>
-                    </div>
-                </div>
+                @endforeach
             </div>
         </div>
     </div>

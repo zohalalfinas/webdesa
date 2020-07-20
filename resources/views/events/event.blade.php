@@ -1,17 +1,23 @@
-@extends('layouts.app')
+@extends('layouts.apps')
 
 @section('content')
 <main>
     <div class="container  mt-5 mb-5 ">
         <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
         <ol class="carousel-indicators">
+            @php $i=1; @endphp
             <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
-            <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
-            <li data-target="#carouselExampleCaptions" data-slide-to="2"></li>
+            @foreach ($data as $item)
+            <li data-target="#carouselExampleCaptions" data-slide-to="{{$i}}"></li>
+            @php $i++; @endphp
+            @endforeach
         </ol>
-        <div class="carousel-inner ">
+        <div class="carousel-inner">
+            @php $j = 0 ;@endphp
+            @foreach ($data as $p)
+            @if( $j === 0 )
             <div class="carousel-item active">
-            <img src="{{asset('aznews/assets/img/trending/trending_bottom1.jpg')}}" class="d-block w-100" alt="...">
+            <img src="{{asset('foto/event')}}/{{$p->foto}}" class="d-block w-100" alt="...">
             <div class="carousel-caption d-none d-md-block">
                 <a href="">
                     <h5 style="font-size:300%;color:white;">Event</h5>
@@ -19,20 +25,16 @@
                 <p style="color:white;">Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
             </div>
             </div>
+            @endif
             <div class="carousel-item">
-            <img src="{{asset('aznews/assets/img/trending/trending_bottom2.jpg')}}" class="d-block w-100" alt="...">
+            <img src="{{asset('foto/event')}}/{{$p->foto}}" class="d-block w-100" alt="...">
             <div class="carousel-caption d-none d-md-block">
                 <h5 style="font-size:300%;color:white;">Event</h5>
                 <p style="color:white;">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
             </div>
-            </div>
-            <div class="carousel-item">
-            <img src="{{asset('aznews/assets/img/trending/trending_bottom3.jpg')}}" class="d-block w-100" alt="...">
-            <div class="carousel-caption d-none d-md-block">
-                <h5 style="font-size:300%;color:white;">Event</h5>
-                <p style="color:white;">Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
-            </div>
-            </div>
+            </div>      
+            @php $j++; @endphp                    
+            @endforeach
         </div>
         <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
             <span class="carousel-control-prev-icon" aria-hidden="true"></span>

@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.apps')
 
 @section('content')
 <main>
@@ -27,7 +27,7 @@
                         <div  class="trending-top mb-30 ml-10">
                             <div class="trend-top-img">
                                 <div class="embed-responsive embed-responsive-16by9">
-                                    <iframe class="embed-responsive-item" src="https://www.youtube.com/watch?v=DSa-peQ8PIw&t=12s" allowfullscreen></iframe>
+                                    <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/Eecr2TdZ4-s" allowfullscreen></iframe>
                                 <!-- <img src="{{asset('aznews/assets/img/trending/trending_top.jpg')}}" alt=""> -->
                                 </div>
                                 <div class="trend-top-cap">
@@ -37,98 +37,28 @@
                             </div>
                         </div>
                         <!-- Trending Bottom -->
-                        <div class="trending-bottom">
+                        <div class="trending-bottom" data-aos="flip-up">
                             <div class="section-tittle mb-30">
                                 <h3>Produk sumberejo</h3>
                             </div>
                             <div class="row">
-                                <div class="col-lg-4">
+                                @foreach ($produk as $item)
+                                <div class="col-lg-4" >
                                 <div class="single-bottom mb-35">
                                     <div class="trend-bottom-img mb-30">
-                                        <img src="{{asset('aznews/assets/img/trending/trending_bottom1.jpg')}}" alt="">
+                                        <img src="{{asset('foto/produk')}}/{{$item->foto}}" alt="" style="object-fit: none;object-position: center;
+                                        width: 100%;max-height: 400px;margin-bottom: 1rem;">
                                     </div>
                                     <div class="trend-bottom-cap">
-                                        <span class="color1">Lifestyple</span>
-                                        <h4><a href="details.html">Get the Illusion of Fuller Lashes by “Mascng.”</a></h4>
+                                        <span class="color1">asd</span>
+                                        <h4><a href="{{url('produk/detail')}}/{{$item->id_produk}}">{{$item->deskripsi}}</a></h4>
                                     </div>
                                 </div>
                                 </div>
-                                <div class="col-lg-4">
-                                    <div class="single-bottom mb-35">
-                                        <div class="trend-bottom-img mb-30">
-                                            <img src="{{asset('aznews/assets/img/trending/trending_bottom2.jpg')}}" alt="">
-                                        </div>
-                                        <div class="trend-bottom-cap">
-                                            <span class="color2">Sports</span>
-                                            <h4><h4><a href="details.html">Get the Illusion of Fuller Lashes by “Mascng.”</a></h4></h4>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-4">
-                                    <div class="single-bottom mb-35">
-                                        <div class="trend-bottom-img mb-30">
-                                            <img src="{{asset('aznews/assets/img/trending/trending_bottom3.jpg')}}" alt="">
-                                        </div>
-                                        <div class="trend-bottom-cap">
-                                            <span class="color3">Travels</span>
-                                            <h4><a href="details.html"> Welcome To The Best Model Winner Contest</a></h4>
-                                        </div>
-                                    </div>
-                                </div>
+                                @endforeach
                             </div>
                         </div>
                     </div>
-                    <!-- Riht content -->
-                    <!-- <div class="col-lg-4">
-                    <div class="section-tittle mb-30">
-                                <h3>Event sumberejo</h3>
-                            </div>
-                        <div class="trand-right-single d-flex">
-                            <div class="trand-right-img">
-                                <img src="{{asset('aznews/assets/img/trending/right1.jpg')}}" alt="">
-                            </div>
-                            <div class="trand-right-cap">
-                                <span class="color1">Concert</span>
-                                <h4><a href="details.html">Welcome To The Best Model Winner Contest</a></h4>
-                            </div>
-                        </div>
-                        <div class="trand-right-single d-flex">
-                            <div class="trand-right-img">
-                                <img src="{{asset('aznews/assets/img/trending/right2.jpg')}}" alt="">
-                            </div>
-                            <div class="trand-right-cap">
-                                <span class="color3">sea beach</span>
-                                <h4><a href="details.html">Welcome To The Best Model Winner Contest</a></h4>
-                            </div>
-                        </div>
-                        <div class="trand-right-single d-flex">
-                            <div class="trand-right-img">
-                                <img src="{{asset('aznews/assets/img/trending/right3.jpg')}}" alt="">
-                            </div>
-                            <div class="trand-right-cap">
-                                <span class="color2">Bike Show</span>
-                                <h4><a href="details.html">Welcome To The Best Model Winner Contest</a></h4>
-                            </div>
-                        </div> 
-                        <div class="trand-right-single d-flex">
-                            <div class="trand-right-img">
-                                <img src="{{asset('aznews/assets/img/trending/right4.jpg')}}" alt="">
-                            </div>
-                            <div class="trand-right-cap">
-                                <span class="color4">See beach</span>
-                                <h4><a href="details.html">Welcome To The Best Model Winner Contest</a></h4>
-                            </div>
-                        </div>
-                        <div class="trand-right-single d-flex">
-                            <div class="trand-right-img">
-                                <img src="{{asset('aznews/assets/img/trending/right5.jpg')}}" alt="">
-                            </div>
-                            <div class="trand-right-cap">
-                                <span class="color1">Skeping</span>
-                                <h4><a href="details.html">Welcome To The Best Model Winner Contest</a></h4>
-                            </div>
-                        </div>
-                    </div> -->
                 </div>
             </div>
         </div>
@@ -143,13 +73,13 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="section-tittle mb-30">
-                            <h3>event</h3>
+                            <h3>Event</h3>
                         </div>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-12">
-                        <div class="recent-active dot-style d-flex dot-style">
+                        <div class="recent-active dot-style d-flex">
                             <div class="single-recent mb-100">
                                 <div class="what-img">
                                     <img src="{{asset('aznews/assets/img/news/recent1.jpg')}}" alt="">
@@ -207,308 +137,37 @@
                         <!-- Nav Card -->
                         <div class="tab-content" id="nav-tabContent">
                             <!-- card one -->
-                            <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">           
+                            <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab"  data-aos="fade-right">           
                                 <div class="whats-news-caption">
                                     <div class="row">
+                                        @foreach ($artikel as $item)
                                         <div class="col-lg-6 col-md-6">
                                             <div class="single-what-news mb-100">
                                                 <div class="what-img">
-                                                    <img src="{{asset('aznews/assets/img/news/whatNews1.jpg')}}" alt="">
+                                                    <img src="{{asset('foto/artikel')}}/{{$item->foto}}" alt="" style="object-fit: none;object-position: center;
+                                                    width: 100%;max-height: 300px;margin-bottom: 1rem;">
                                                 </div>
                                                 <div class="what-cap">
-                                                    <span class="color1">Night party</span>
-                                                    <h4><a href="#">Welcome To The Best Model  Winner Contest</a></h4>
+                                                    <span class="color1">Artikel</span>
+                                                    <h4><a href="{{url('covid/artikel/detail' , $item->id_artikel)}}">{{$item->judul}}</a></h4>
                                                 </div>
                                             </div>
                                         </div>
+                                        @endforeach
+                                        @foreach ($infografik as $item)
                                         <div class="col-lg-6 col-md-6">
                                             <div class="single-what-news mb-100">
                                                 <div class="what-img">
-                                                    <img src="{{asset('aznews/assets/img/news/whatNews2.jpg')}}" alt="">
+                                                    <img src="{{asset('foto/infografik')}}/{{$item->foto}}" alt="" style="object-fit: none;object-position: center;
+                                                    width: 100%;max-height: 300px;margin-bottom: 1rem;">
                                                 </div>
                                                 <div class="what-cap">
-                                                    <span class="color1">Night party</span>
-                                                    <h4><a href="#">Welcome To The Best Model  Winner Contest</a></h4>
+                                                    <span class="color1">infografik</span>
+                                                    <h4><a href="{{url('covid')}}">{{$item->judul}}</a></h4>
                                                 </div>
                                             </div>
-                                        </div> 
-                                        <div class="col-lg-6 col-md-6">
-                                            <div class="single-what-news mb-100">
-                                                <div class="what-img">
-                                                    <img src="{{asset('aznews/assets/img/news/whatNews3.jpg')}}" alt="">
-                                                </div>
-                                                <div class="what-cap">
-                                                    <span class="color1">Night party</span>
-                                                    <h4><a href="#">Welcome To The Best Model  Winner Contest</a></h4>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-6 col-md-6">
-                                            <div class="single-what-news mb-100">
-                                                <div class="what-img">
-                                                    <img src="{{asset('aznews/assets/img/news/whatNews4.jpg')}}" alt="">
-                                                </div>
-                                                <div class="what-cap">
-                                                    <span class="color1">Night party</span>
-                                                    <h4><a href="#">Welcome To The Best Model  Winner Contest</a></h4>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- Card two -->
-                            <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
-                                <div class="whats-news-caption">
-                                    <div class="row">
-                                        <div class="col-lg-6 col-md-6">
-                                            <div class="single-what-news mb-100">
-                                                <div class="what-img">
-                                                    <img src="{{asset('aznews/assets/img/news/whatNews1.jpg')}}" alt="">
-                                                </div>
-                                                <div class="what-cap">
-                                                    <span class="color1">Night party</span>
-                                                    <h4><a href="#">Welcome To The Best Model  Winner Contest</a></h4>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-6 col-md-6">
-                                            <div class="single-what-news mb-100">
-                                                <div class="what-img">
-                                                    <img src="{{asset('aznews/assets/img/news/whatNews2.jpg')}}" alt="">
-                                                </div>
-                                                <div class="what-cap">
-                                                    <span class="color1">Night party</span>
-                                                    <h4><a href="#">Welcome To The Best Model  Winner Contest</a></h4>
-                                                </div>
-                                            </div>
-                                        </div> 
-                                        <div class="col-lg-6 col-md-6">
-                                            <div class="single-what-news mb-100">
-                                                <div class="what-img">
-                                                    <img src="{{asset('aznews/assets/img/news/whatNews3.jpg')}}" alt="">
-                                                </div>
-                                                <div class="what-cap">
-                                                    <span class="color1">Night party</span>
-                                                    <h4><a href="#">Welcome To The Best Model  Winner Contest</a></h4>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-6 col-md-6">
-                                            <div class="single-what-news mb-100">
-                                                <div class="what-img">
-                                                    <img src="{{asset('aznews/assets/img/news/whatNews4.jpg')}}" alt="">
-                                                </div>
-                                                <div class="what-cap">
-                                                    <span class="color1">Night party</span>
-                                                    <h4><a href="#">Welcome To The Best Model  Winner Contest</a></h4>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- Card three -->
-                            <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">
-                                <div class="whats-news-caption">
-                                    <div class="row">
-                                        <div class="col-lg-6 col-md-6">
-                                            <div class="single-what-news mb-100">
-                                                <div class="what-img">
-                                                    <img src="{{asset('aznews/assets/img/news/whatNews1.jpg')}}" alt="">
-                                                </div>
-                                                <div class="what-cap">
-                                                    <span class="color1">Night party</span>
-                                                    <h4><a href="#">Welcome To The Best Model  Winner Contest</a></h4>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-6 col-md-6">
-                                            <div class="single-what-news mb-100">
-                                                <div class="what-img">
-                                                    <img src="{{asset('aznews/assets/img/news/whatNews2.jpg')}}" alt="">
-                                                </div>
-                                                <div class="what-cap">
-                                                    <span class="color1">Night party</span>
-                                                    <h4><a href="#">Welcome To The Best Model  Winner Contest</a></h4>
-                                                </div>
-                                            </div>
-                                        </div> 
-                                        <div class="col-lg-6 col-md-6">
-                                            <div class="single-what-news mb-100">
-                                                <div class="what-img">
-                                                    <img src="{{asset('aznews/assets/img/news/whatNews3.jpg')}}" alt="">
-                                                </div>
-                                                <div class="what-cap">
-                                                    <span class="color1">Night party</span>
-                                                    <h4><a href="#">Welcome To The Best Model  Winner Contest</a></h4>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-6 col-md-6">
-                                            <div class="single-what-news mb-100">
-                                                <div class="what-img">
-                                                    <img src="{{asset('aznews/assets/img/news/whatNews4.jpg')}}" alt="">
-                                                </div>
-                                                <div class="what-cap">
-                                                    <span class="color1">Night party</span>
-                                                    <h4><a href="#">Welcome To The Best Model  Winner Contest</a></h4>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- card fure -->
-                            <div class="tab-pane fade" id="nav-last" role="tabpanel" aria-labelledby="nav-last-tab">
-                                <div class="whats-news-caption">
-                                    <div class="row">
-                                        <div class="col-lg-6 col-md-6">
-                                            <div class="single-what-news mb-100">
-                                                <div class="what-img">
-                                                    <img src="assets/img/news/whatNews1.jpg" alt="">
-                                                </div>
-                                                <div class="what-cap">
-                                                    <span class="color1">Night party</span>
-                                                    <h4><a href="#">Welcome To The Best Model  Winner Contest</a></h4>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-6 col-md-6">
-                                            <div class="single-what-news mb-100">
-                                                <div class="what-img">
-                                                    <img src="assets/img/news/whatNews2.jpg" alt="">
-                                                </div>
-                                                <div class="what-cap">
-                                                    <span class="color1">Night party</span>
-                                                    <h4><a href="#">Welcome To The Best Model  Winner Contest</a></h4>
-                                                </div>
-                                            </div>
-                                        </div> 
-                                        <div class="col-lg-6 col-md-6">
-                                            <div class="single-what-news mb-100">
-                                                <div class="what-img">
-                                                    <img src="assets/img/news/whatNews3.jpg" alt="">
-                                                </div>
-                                                <div class="what-cap">
-                                                    <span class="color1">Night party</span>
-                                                    <h4><a href="#">Welcome To The Best Model  Winner Contest</a></h4>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-6 col-md-6">
-                                            <div class="single-what-news mb-100">
-                                                <div class="what-img">
-                                                    <img src="assets/img/news/whatNews4.jpg" alt="">
-                                                </div>
-                                                <div class="what-cap">
-                                                    <span class="color1">Night party</span>
-                                                    <h4><a href="#">Welcome To The Best Model  Winner Contest</a></h4>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- card Five -->
-                            <div class="tab-pane fade" id="nav-nav-Sport" role="tabpanel" aria-labelledby="nav-Sports">
-                                <div class="whats-news-caption">
-                                    <div class="row">
-                                        <div class="col-lg-6 col-md-6">
-                                            <div class="single-what-news mb-100">
-                                                <div class="what-img">
-                                                    <img src="assets/img/news/whatNews1.jpg" alt="">
-                                                </div>
-                                                <div class="what-cap">
-                                                    <span class="color1">Night party</span>
-                                                    <h4><a href="#">Welcome To The Best Model  Winner Contest</a></h4>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-6 col-md-6">
-                                            <div class="single-what-news mb-100">
-                                                <div class="what-img">
-                                                    <img src="assets/img/news/whatNews2.jpg" alt="">
-                                                </div>
-                                                <div class="what-cap">
-                                                    <span class="color1">Night party</span>
-                                                    <h4><a href="#">Welcome To The Best Model  Winner Contest</a></h4>
-                                                </div>
-                                            </div>
-                                        </div> 
-                                        <div class="col-lg-6 col-md-6">
-                                            <div class="single-what-news mb-100">
-                                                <div class="what-img">
-                                                    <img src="assets/img/news/whatNews3.jpg" alt="">
-                                                </div>
-                                                <div class="what-cap">
-                                                    <span class="color1">Night party</span>
-                                                    <h4><a href="#">Welcome To The Best Model  Winner Contest</a></h4>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-6 col-md-6">
-                                            <div class="single-what-news mb-100">
-                                                <div class="what-img">
-                                                    <img src="assets/img/news/whatNews4.jpg" alt="">
-                                                </div>
-                                                <div class="what-cap">
-                                                    <span class="color1">Night party</span>
-                                                    <h4><a href="#">Welcome To The Best Model  Winner Contest</a></h4>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- card Six -->
-                            <div class="tab-pane fade" id="nav-techno" role="tabpanel" aria-labelledby="nav-technology">
-                                <div class="whats-news-caption">
-                                    <div class="row">
-                                        <div class="col-lg-6 col-md-6">
-                                            <div class="single-what-news mb-100">
-                                                <div class="what-img">
-                                                    <img src="assets/img/news/whatNews1.jpg" alt="">
-                                                </div>
-                                                <div class="what-cap">
-                                                    <span class="color1">Night party</span>
-                                                    <h4><a href="#">Welcome To The Best Model  Winner Contest</a></h4>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-6 col-md-6">
-                                            <div class="single-what-news mb-100">
-                                                <div class="what-img">
-                                                    <img src="assets/img/news/whatNews2.jpg" alt="">
-                                                </div>
-                                                <div class="what-cap">
-                                                    <span class="color1">Night party</span>
-                                                    <h4><a href="#">Welcome To The Best Model  Winner Contest</a></h4>
-                                                </div>
-                                            </div>
-                                        </div> 
-                                        <div class="col-lg-6 col-md-6">
-                                            <div class="single-what-news mb-100">
-                                                <div class="what-img">
-                                                    <img src="assets/img/news/whatNews3.jpg" alt="">
-                                                </div>
-                                                <div class="what-cap">
-                                                    <span class="color1">Night party</span>
-                                                    <h4><a href="#">Welcome To The Best Model  Winner Contest</a></h4>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-6 col-md-6">
-                                            <div class="single-what-news mb-100">
-                                                <div class="what-img">
-                                                    <img src="assets/img/news/whatNews4.jpg" alt="">
-                                                </div>
-                                                <div class="what-cap">
-                                                    <span class="color1">Night party</span>
-                                                    <h4><a href="#">Welcome To The Best Model  Winner Contest</a></h4>
-                                                </div>
-                                            </div>
-                                        </div>
+                                        </div>              
+                                        @endforeach
                                     </div>
                                 </div>
                             </div>
@@ -517,21 +176,22 @@
                     </div>
                 </div>
             </div>
-            <div class="col-lg-4">
+            <div class="col-lg-4" data-aos="zoom-out">
                 <!-- Section Tittle -->
                 <div class="section-tittle mb-40">
                     <h3>Data sebaran Covid</h3>
                 </div>
                 <!-- Flow Socail -->
                 <div class="single-follow mb-45">
-                    <div class="single-box">
+                    <div class="single-box" >
+                        @foreach ($grafik as $item)
                         <div class="follow-us d-flex align-items-center">
                             <div class="follow-social">
                                 <a href="#"><img src="assets/img/news/icon-fb.png" alt=""></a>
                             </div>
                             <div class="follow-count">  
-                                <span>8,045</span>
-                                <p>Fans</p>
+                                <span>{{ $item['positif'] }}</span>
+                                <p>Positif</p>
                             </div>
                         </div> 
                         <div class="follow-us d-flex align-items-center">
@@ -539,8 +199,8 @@
                                 <a href="#"><img src="assets/img/news/icon-tw.png" alt=""></a>
                             </div>
                             <div class="follow-count">
-                                <span>8,045</span>
-                                <p>Fans</p>
+                                <span>{{ $item['sembuh'] }}</span>
+                                <p>Sembuh</p>
                             </div>
                         </div>
                             <div class="follow-us d-flex align-items-center">
@@ -548,8 +208,8 @@
                                 <a href="#"><img src="assets/img/news/icon-ins.png" alt=""></a>
                             </div>
                             <div class="follow-count">
-                                <span>8,045</span>
-                                <p>Fans</p>
+                                <span>{{ $item['meninggal'] }}</span>
+                                <p>Meninggal</p>
                             </div>
                         </div>
                         <div class="follow-us d-flex align-items-center">
@@ -557,10 +217,12 @@
                                 <a href="#"><img src="assets/img/news/icon-yo.png" alt=""></a>
                             </div>
                             <div class="follow-count">
-                                <span>8,045</span>
-                                <p>Fans</p>
+                                <span>{{ $item['positif'] }}</span>
+                                <p>Aktif</p>
                             </div>
                         </div>
+                                                    
+                        @endforeach
                     </div>
                 </div>
                 <!-- New Poster -->

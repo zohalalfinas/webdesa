@@ -43,19 +43,19 @@
                                 @csrf
                                 <div class="position-relative row form-group"><label for="nama"
                                         class="col-sm-2 col-form-label">Nama Pariwisata</label>
-                                    <div class="col-sm-10"><input name="nama" id="nama"
+                                    <div class="col-sm-10"><input required name="nama" id="nama"
                                             placeholder="Masukkan Nama Pariwisata" type="text" class="form-control">
                                     </div>
                                 </div>
                                 <div class="position-relative row form-group"><label for="lokasi"
                                         class="col-sm-2 col-form-label">Link Map Lokasi</label>
-                                    <div class="col-sm-10"><input name="lokasi" id="lokasi"
+                                    <div class="col-sm-10"><input required name="lokasi" id="lokasi"
                                             placeholder="Masukkan Lokasi Pariwisata" type="text" class="form-control">
                                     </div>
                                 </div>
                                 <div class="position-relative row form-group"><label for="youtube"
                                         class="col-sm-2 col-form-label">Youtube</label>
-                                    <div class="col-sm-10"><input name="youtube" id="youtube"
+                                    <div class="col-sm-10"><input required name="youtube" id="youtube"
                                             placeholder="Masukkan Youtube Jika Ada" type="text" class="form-control">
                                     </div>
                                 </div>
@@ -66,8 +66,8 @@
                                 </div>
                                 <div class="position-relative row form-group"><label for="foto"
                                         class="col-sm-2 col-form-label">Foto</label>
-                                    <div class="col-sm-10"><input name="foto" id="foto" type="file"
-                                            class="form-control-file">
+                                    <div class="col-sm-10"><input required name="foto" id="foto" type="file"
+                                            class="form-control-file" accept="image/*">
                                     </div>
                                 </div>
                                 <br>
@@ -109,19 +109,19 @@
                                         {{csrf_field()}}{{method_field('PATCH')}}
                                         <div class="position-relative row form-group"><label for="nama"
                                                 class="col-sm-2 col-form-label">Nama Pariwisata</label>
-                                            <div class="col-sm-10"><input name="nama" id="nama"
+                                            <div class="col-sm-10"><input required name="nama" id="nama"
                                                     placeholder="Masukkan Nama Pariwisata" type="text"
                                                     class="form-control" value="{{ $pariwisata->nama }}"></div>
                                         </div>
                                         <div class="position-relative row form-group"><label for="lokasi"
                                                 class="col-sm-2 col-form-label">Link Map Lokasi</label>
-                                            <div class="col-sm-10"><input name="lokasi" id="lokasi"
+                                            <div class="col-sm-10"><input required name="lokasi" id="lokasi"
                                                     placeholder="Masukkan Lokasi Pariwisata" type="text"
                                                     class="form-control" value="{{ $pariwisata->lokasi }}"></div>
                                         </div>
                                         <div class="position-relative row form-group"><label for="youtube"
                                                 class="col-sm-2 col-form-label">Youtube</label>
-                                            <div class="col-sm-10"><input name="youtube" id="youtube"
+                                            <div class="col-sm-10"><input required name="youtube" id="youtube"
                                                     placeholder="Masukkan Youtube Jika Ada" type="text"
                                                     class="form-control" value="{{ $pariwisata->youtube }}"></div>
                                         </div>
@@ -132,8 +132,8 @@
                                         </div>
                                         <div class="position-relative row form-group"><label for="foto"
                                                 class="col-sm-2 col-form-label">Foto</label>
-                                            <div class="col-sm-10"><input name="foto" id="foto" type="file"
-                                                    class="form-control-file">
+                                            <div class="col-sm-10"><input id="foto" type="file"
+                                                    class="form-control-file" accept="image/*">
                                                 <img src="{{asset('foto/pariwisata')}}/{{$pariwisata->foto}}"
                                                     class="img-thumbnail">
                                             </div>
@@ -156,19 +156,19 @@
                                         {{csrf_field()}}{{method_field('PATCH')}}
                                         <div class="position-relative row form-group"><label for="nama"
                                                 class="col-sm-2 col-form-label">Nama Pariwisata</label>
-                                            <div class="col-sm-10"><input name="nama" id="nama"
+                                            <div class="col-sm-10"><input required name="nama" id="nama"
                                                     placeholder="Masukkan Nama Pariwisata" type="text"
                                                     class="form-control" value="{{ $pariwisata->nama }}"></div>
                                         </div>
                                         <div class="position-relative row form-group"><label for="waktu"
                                                 class="col-sm-2 col-form-label">Link Map Lokasi</label>
-                                            <div class="col-sm-10"><input name="lokasi" id="lokasi"
+                                            <div class="col-sm-10"><input required name="lokasi" id="lokasi"
                                                     placeholder="Masukkan Lokasi Pariwisata" type="text"
                                                     class="form-control" value="{{ $pariwisata->lokasi }}"></div>
                                         </div>
                                         <div class="position-relative row form-group"><label for="youtube"
                                                 class="col-sm-2 col-form-label">Youtube</label>
-                                            <div class="col-sm-10"><input name="youtube" id="youtube"
+                                            <div class="col-sm-10"><input required name="youtube" id="youtube"
                                                     placeholder="Masukkan Youtube Jika Ada" type="text"
                                                     class="form-control" value="{{ $pariwisata->youtube }}"></div>
                                         </div>
@@ -179,8 +179,8 @@
                                         </div>
                                         <div class="position-relative row form-group"><label for="foto"
                                                 class="col-sm-2 col-form-label">Foto</label>
-                                            <div class="col-sm-10"><input name="foto" id="foto" type="file"
-                                                    class="form-control-file">
+                                            <div class="col-sm-10"><input id="foto" type="file"
+                                                    class="form-control-file" accept="image/*">
                                                 <img src="{{asset('foto/pariwisata')}}/{{$pariwisata->foto}}"
                                                     class="img-thumbnail">
                                             </div>

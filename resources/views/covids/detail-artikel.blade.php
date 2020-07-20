@@ -19,7 +19,7 @@
                         </div>
                     </div>
                    <div class="blog_details">
-                      <p class="excert text-justify">
+                      <p class="excert text-justify" style="white-space:pre-wrap;">
                          {{$data->deskripsi}}
                       </p>
                    </div>

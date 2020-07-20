@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Http;
 use App\m_infografik;
 use App\m_video;
 use App\m_artikel;
@@ -18,8 +19,17 @@ class CovidController extends Controller
     public function index()
     {
         $data = m_infografik::get();
-        $grafik = m_grafik::find(1);
+        $response = Http::get('https://api.kawalcorona.com/indonesia');
+        $grafik = $response->json();
         return view('covids.infograf', compact('data','grafik'));
+    }
+    public function covid19(){
+        $response = Http::get('https://api.kawalcorona.com/indonesia');
+        $data = $response->json();
+        return view('covids.kasus' , compact('data'));
+    }
+    public function show_covid19(){
+        return view('covids.kasus');
     }
     public function v_video()
     {
@@ -36,10 +46,7 @@ class CovidController extends Controller
     public function show_artikel($id){
         $data = m_artikel::find($id);
         return view('covids.detail-artikel', compact('data'));
-
     }
-
-    // Halaman Admin 
 
     public function infografik(){
         $data = m_infografik::get();

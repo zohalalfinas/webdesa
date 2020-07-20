@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\m_profil;
+use App\m_struktur;
 
 class DesaController extends Controller
 {
@@ -13,32 +15,55 @@ class DesaController extends Controller
      */
     public function index()
     {
-        return view('desa.index');
+        $data = m_profil::get();
+        $struktur = m_struktur::get();
+        return view('desa.index', compact('data' , 'struktur'));
     }
     public function visi()
     {
-        return view('desa.visimisi');
+        $data = m_profil::get();
+        return view('desa.visimisi', compact('data'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
+    public function struktur(){
+        $data = m_profil::get();
+        return view('desa.struktur', compact('data'));
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
+    // Admin 
+
+    public function v_profil(){
+        $data = m_profil::get();
+        return view('admin.profil-desa', compact('data'));
+    }
+
+    public function v_struktur(){
+        $data = m_struktur::get();
+        return view('admin.struktur', compact('data'));
+    }
+
     public function store(Request $request)
     {
-        //
+        $data = new m_struktur;
+        $data->nama = $request['nama'];
+        $data->jabatan = $request['jabatan'];
+        if($request->hasFile('foto')){
+            $request->file('foto')->move('foto/struktur/', $request->file('foto')->getClientOriginalName());
+            $data->foto = $request->file('foto')->getClientOriginalName();
+            }
+        $data->save();
+        return back()->with('success','Event Berhasil Ditambah');
+    }
+    public function update_struktur(Request $request, $id){
+        $data = m_struktur::find($id);
+        $data->nama = $request['nama'];
+        $data->jabatan = $request['jabatan'];
+        if($request->hasFile('foto')){
+            $request->file('foto')->move('foto/struktur/', $request->file('foto')->getClientOriginalName());
+            $data->foto = $request->file('foto')->getClientOriginalName();
+            }
+        $data->save();
+        return back()->with('success','Event Berhasil Ditambah');
     }
 
     /**
@@ -72,7 +97,25 @@ class DesaController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $data = m_profil::find($id);
+        $data->deskripsi = $request['deskripsi'];
+        $data->visi = $request['visi'];
+        $data->misi = $request['misi'];
+        $data->facebook = $request['facebook'];
+        $data->telpon = $request['telpon'];
+        $data->instagram = $request['instagram'];
+        $data->youtube = $request['youtube'];
+        $data->gmail = $request['gmail'];
+        if($request->hasFile('foto')){
+            $request->file('foto')->move('foto/profil/', $request->file('foto')->getClientOriginalName());
+            $data->foto = $request->file('foto')->getClientOriginalName();
+        }
+        if($request->hasFile('struktur')){
+            $request->file('struktur')->move('foto/profil/', $request->file('struktur')->getClientOriginalName());
+            $data->struktur = $request->file('struktur')->getClientOriginalName();
+        }
+        $data->save();
+        return back()->with('success','Profil Berhasil Diubah');
     }
 
     /**
@@ -83,6 +126,7 @@ class DesaController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $data = m_struktur::find($id)->delete();
+        return back()->with('success','Event Berhasil Dihapus');
     }
 }
