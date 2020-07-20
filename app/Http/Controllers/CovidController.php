@@ -17,14 +17,6 @@ class CovidController extends Controller
      */
     public function index()
     {
-<<<<<<< HEAD
-        return view('covids.infograf');
-    }
-
-    public function video()
-    {
-        return view('covids.video');
-=======
         $data = m_infografik::get();
         $grafik = m_grafik::find(1);
         return view('covids.infograf', compact('data','grafik'));
@@ -44,7 +36,7 @@ class CovidController extends Controller
     public function show_artikel($id){
         $data = m_artikel::find($id);
         return view('covids.detail-artikel', compact('data'));
->>>>>>> admin
+
     }
 
     // Halaman Admin 
