@@ -7,7 +7,7 @@
             <div class="py-5 text-center">
                 <img style="width:10%;" src="{{asset('aznews/assets/img/logo/pemkab.png')}}" alt="" class="d-block mx-auto mb-4">
                 <h2>BUMDES</h2>
-                <p>introduction about all product BUMDES Lorem ipsum dolor sit amet, consectetur adipisicing elit. Provident, corporis obcaecati eligendi consequuntur earum autem </p>
+                <p>Badan usaha milik desa (atau diakronimkan menjadi Bumdes) merupakan usaha desa yang dikelola oleh Pemerintah Desa, dan berbadan hukum. Pemerintah Desa dapat mendirikan Badan Usaha Milik Desa sesuai dengan kebutuhan dan potensi Desa. Pembentukan Badan Usaha Milik Desa ditetapkan dengan Peraturan Desa. Kepengurusan Badan Usaha Milik Desa terdiri dari Pemerintah Desa dan masyarakat desa setempat.</p>
                 <div class="border-bottom"></div>
             </div>
         </div>

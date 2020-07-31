@@ -37,41 +37,42 @@
             </div>
             <div class="col-lg-4">
                <div class="blog_right_sidebar">
-                  <aside class="single_sidebar_widget instagram_feeds">
-                     <h4 class="widget_title">produk lainnya</h4>
-                     <ul class="instagram_row flex-wrap">
-                        <li>
-                           <a href="#">
-                              <img class="img-fluid" src="{{asset('aznews/assets/img/post/post_5.png')}}" alt="">
-                           </a>
-                        </li>
-                        <li>
-                           <a href="#">
-                              <img class="img-fluid" src="{{asset('aznews/assets/img/post/post_6.png')}}" alt="">
-                           </a>
-                        </li>
-                        <li>
-                           <a href="#">
-                              <img class="img-fluid" src="{{asset('aznews/assets/img/post/post_7.png')}}" alt="">
-                           </a>
-                        </li>
-                        <li>
-                           <a href="#">
-                              <img class="img-fluid" src="{{asset('aznews/assets/img/post/post_8.png')}}" alt="">
-                           </a>
-                        </li>
-                        <li>
-                           <a href="#">
-                              <img class="img-fluid" src="{{asset('aznews/assets/img/post/post_9.png')}}" alt="">
-                           </a>
-                        </li>
-                        <li>
-                           <a href="#">
-                              <img class="img-fluid" src="{{asset('aznews/assets/img/post/post_10.png')}}" alt="">
-                           </a>
-                        </li>
-                     </ul>
-                  </aside>
+                  <div class="section-tittle mb-40">
+                     <h3>Follow Us</h3>
+                 </div>
+                 <!-- Flow Socail -->
+                 <div class="single-follow mb-45">
+                     <div class="single-box">
+                         @if($item->facebook != null)
+                         <div class="follow-us d-flex align-items-center">
+                             <div class="follow-social">
+                                 <a href="{{ $item->facebook }}"><img src="{{asset('aznews/assets/img/news/icon-fb.png')}}" alt=""></a>
+                             </div>
+                         </div> 
+                         @endif
+                         @if($item->gmail != null)
+                         <div class="follow-us d-flex align-items-center">
+                             <div class="follow-social">
+                                 <a href="#"><img src="{{asset('aznews/assets/img/news/icon-tw.png')}}" alt=""></a>
+                             </div>
+                         </div>
+                         @endif
+                         @if($item->instagram != null)
+                             <div class="follow-us d-flex align-items-center">
+                             <div class="follow-social">
+                                 <a href="#"><img src="{{asset('aznews/assets/img/news/icon-ins.png')}}" alt=""></a>
+                             </div>
+                         </div>
+                         @endif
+                         @if($item->youtube != null)
+                         <div class="follow-us d-flex align-items-center">
+                             <div class="follow-social">
+                                 <a href="#"><img src="{{asset('aznews/assets/img/news/icon-yo.png')}}" alt=""></a>
+                             </div>
+                         </div>
+                         @endif
+                     </div>
+                 </div>
                   <aside class="single_sidebar_widget newsletter_widget">
                   <h4 class="widget_title">Peta desa</h4>
                      <div class="embed-responsive embed-responsive-16by9">

@@ -33,19 +33,23 @@ class CovidController extends Controller
     }
     public function v_video()
     {
-        $grafik = m_grafik::find(1);
+        $response = Http::get('https://api.kawalcorona.com/indonesia');
+        $grafik = $response->json();
         $data = m_video::get();
         return view('covids.video',compact('grafik', 'data'));
     }
     public function v_artikel()
     {
-        $grafik = m_grafik::find(1);
+        $response = Http::get('https://api.kawalcorona.com/indonesia');
+        $grafik = $response->json();
         $data = m_artikel::get();
         return view('covids.artikel',compact('grafik', 'data'));
     }
     public function show_artikel($id){
+        $response = Http::get('https://api.kawalcorona.com/indonesia');
+        $grafik = $response->json();
         $data = m_artikel::find($id);
-        return view('covids.detail-artikel', compact('data'));
+        return view('covids.detail-artikel', compact('data','grafik'));
     }
 
     public function infografik(){

@@ -52,9 +52,10 @@
                                 </div>
                                 <div class="position-relative row form-group"><label for="foto"
                                         class="col-sm-2 col-form-label">Foto</label>
-                                    <div class="col-sm-10"><input required name="foto" id="foto" type="file"
+                                        <div class="col-sm-10"><input required name="foto" id="foto" type="file"
                                             class="form-control-file"  accept="image/*">
-                                    </div>
+                                            <small>Foto Harus Ukuran 3 X 4</small>
+                                        </div>
                                 </div>
                                 <br>
                                 <div class="col-sm-10">

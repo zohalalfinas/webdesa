@@ -10,8 +10,7 @@
                 <div class="single-bottom mb-35">
                     <div class="trend-bottom-img mb-30">
                         <a data-toggle="modal" data-target="#image{{$infograf->id_infografik}}"><img
-                                src="{{asset('foto/infografik')}}/{{$infograf->foto}}" alt="" style="object-fit: none;object-position: center;
-                                                    width: 100%;max-height: 300px;margin-bottom: 1rem;"></a>
+                                src="{{asset('foto/infografik')}}/{{$infograf->foto}}" alt="" style="max-height:300px;text-align:center;overflow:hidden;padding:0;"></a>
                     </div>
                     <div class="trend-bottom-cap">
                         <span class="color1">{{ $infograf->judul }}</span>

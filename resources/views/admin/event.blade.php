@@ -75,6 +75,7 @@
                                         class="col-sm-2 col-form-label">Foto</label>
                                     <div class="col-sm-10"><input required name="foto" id="foto" type="file"
                                             class="form-control-file" accept="image/*">
+                                            <small>Pamflet potrait</small>
                                     </div>
                                 </div>
                                 <br>

@@ -43,17 +43,17 @@
                                 <div class="position-relative row form-group"><label for="judul"
                                         class="col-sm-2 col-form-label">Judul Produk</label>
                                     <div class="col-sm-10"><input name="judul" id="judul"
-                                            placeholder="Masukkan Judul Produk" type="text" class="form-control"></div>
+                                            placeholder="Masukkan Judul Produk" type="text" class="form-control" required></div>
                                 </div>
                                 <div class="position-relative row form-group"><label for="deskripsi"
                                     class="col-sm-2 col-form-label">Deskripsi</label>
                                 <div class="col-sm-10"><textarea name="deskripsi" id="deskripsi1"
-                                        class="form-control" onkeypress="geeks(event)"></textarea></div>
+                                        class="form-control" onkeypress="geeks(event)" required></textarea></div>
                                 </div>
                                 <div class="position-relative row form-group"><label for="foto"
                                         class="col-sm-2 col-form-label">Foto</label>
                                     <div class="col-sm-10"><input name="foto" id="foto" type="file"
-                                            class="form-control-file">
+                                            class="form-control-file" required>
                                     </div>
                                 </div>
                                 <br>

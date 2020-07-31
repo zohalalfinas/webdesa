@@ -47,7 +47,7 @@
                                 @foreach ($produk as $item)
                                 <div class="col-md-4 mb-5" data-aos="zoom-in-down" data-aos-delay="<?=$a=$a+$i;?>">
                                     <div style="background-color:transparent;border:none;" class="card mb-4 shadow-sm">
-                                        <div class="panel-body " style="max-height:100px;text-align:center;overflow:hidden;padding:0;">
+                                        <div class="panel-body " style="max-height:150px;text-align:center;overflow:hidden;padding:0;">
                                             <img  src="{{asset('foto/produk')}}/{{$item->foto}}" class=" mx-auto d-block mt-2 " alt="Responsive image" width="50%">
                                         </div>
                                         <div class="card-body">
@@ -78,9 +78,9 @@
             <!-- slick -->
             <div class="slicky">
             @foreach ($event as $item)
-                <div class="col-md-3 col-sm-12" >
+                <div class="col" style="float: left;">
                     <div class="card mb-1">
-                        <div class="" style="max-height:300px;overflow:hidden;">
+                        <div class="" style="max-height:300px;text-align:center;overflow:hidden;padding:0;">
                             <img src="{{asset('foto/event')}}/{{$item->foto}}" class="card-img-top" alt="...">
                         </div>
                         <div class="card-body">
@@ -187,9 +187,8 @@
                                         @foreach ($artikel as $item)
                                         <div class="col-lg-6 col-md-6">
                                             <div class="single-what-news mb-100">
-                                                <div class="what-img">
-                                                    <img src="{{asset('foto/artikel')}}/{{$item->foto}}" alt="" style="object-fit: none;object-position: center;
-                                                    width: 100%;max-height: 300px;margin-bottom: 1rem;">
+                                                <div class="what-img" style="max-height:300px;text-align:center;overflow:hidden;padding:0;">
+                                                    <img src="{{asset('foto/artikel')}}/{{$item->foto}}" alt="" >
                                                 </div>
                                                 <div class="what-cap">
                                                     <span class="color1">Artikel</span>
@@ -201,9 +200,8 @@
                                         @foreach ($infografik as $item)
                                         <div class="col-lg-6 col-md-6">
                                             <div class="single-what-news mb-100">
-                                                <div class="what-img">
-                                                    <img src="{{asset('foto/infografik')}}/{{$item->foto}}" alt="" style="object-fit: none;object-position: center;
-                                                    width: 100%;max-height: 300px;margin-bottom: 1rem;">
+                                                <div class="what-img" style="max-height:300px;text-align:center;overflow:hidden;padding:0;">
+                                                    <img src="{{asset('foto/infografik')}}/{{$item->foto}}" alt="">
                                                 </div>
                                                 <div class="what-cap">
                                                     <span class="color1">infografik</span>

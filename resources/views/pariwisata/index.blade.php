@@ -24,8 +24,8 @@
                                 <span class="color1">Pariwisata</span>
                             </div>
                             <div class="bottom-caption">
-                                <h2>Pantai watu ulo sumberejo</h2>
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit sed do eiusmod ipsum dolor sit. Lorem ipsum dolor sit amet consectetur adipisicing elit sed do eiusmod ipsum dolor sit. Lorem ipsum dolor sit amet consectetur adipisicing elit sed do eiusmod ipsum dolor sit lorem ipsum dolor sit.</p>
+                                <h2>Pariwisata Desa Sumberejo</h2>
+                                <p>Desa Sumberejo merupakan salah satu desa yang terletak paling selatan dari Kecamatan Ambulu Kabupaten Jember, desa ini berada didekat pantai Watu Ulo dan Payangan. Karena letaknya jauh dengan kota, mayoritas masyarakatnya adalah petani, pedagang, dan nelayan. Desa Sumberejo mempunyai banyak icon pariwisata, antara lain Pantai Watu Ulo, Teluk Love, Bukit Kambing, dan sebagainya.</p>
                             </div>
                         </div>
                     </div>
@@ -73,26 +73,6 @@
                             </div>
                         </article>
                         @endforeach
-                        <nav class="blog-pagination justify-content-center d-flex">
-                            <ul class="pagination">
-                                <li class="page-item">
-                                    <a href="#" class="page-link" aria-label="Previous">
-                                        <i class="ti-angle-left"></i>
-                                    </a>
-                                </li>
-                                <li class="page-item">
-                                    <a href="#" class="page-link">1</a>
-                                </li>
-                                <li class="page-item active">
-                                    <a href="#" class="page-link">2</a>
-                                </li>
-                                <li class="page-item">
-                                    <a href="#" class="page-link" aria-label="Next">
-                                        <i class="ti-angle-right"></i>
-                                    </a>
-                                </li>
-                            </ul>
-                        </nav>
                     </div>
                 </div>
                 <div class="col-lg-4">

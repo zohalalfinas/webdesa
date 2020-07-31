@@ -85,9 +85,7 @@
                                         @foreach ($struktur as $item)       
                                         @if($j === 0)                               
                                         <div class="carousel-item active">
-                                        <img src="{{asset('foto/struktur')}}/{{$item->foto}}" class="d-block w-100 rounded" alt="..."
-                                        style="object-fit: none;object-position: center;
-                                        width: 100%;max-height: 400px;margin-bottom: 1rem;">
+                                        <img src="{{asset('foto/struktur')}}/{{$item->foto}}" class="d-block w-100 rounded" alt="...">
                                         <div class="carousel-caption d-none d-md-block">
                                             <h5 style="color:white;">{{$item->nama}}</h5>
                                             <p style="color:black;">{{$item->jabatan}}</p>
@@ -95,9 +93,7 @@
                                         </div>
                                         @else
                                         <div class="carousel-item">
-                                            <img src="{{asset('foto/struktur')}}/{{$item->foto}}" class="d-block w-100 rounded" alt="..."
-                                            style="object-fit: none;object-position: center;
-                                            width: 100%;max-height: 400px;margin-bottom: 1rem;">
+                                            <img src="{{asset('foto/struktur')}}/{{$item->foto}}" class="d-block w-100 rounded" alt="...">
                                             <div class="carousel-caption d-none d-md-block">
                                                 <h5 style="color:white;">{{$item->nama}}</h5>
                                                 <p style="color:black;">{{$item->jabatan}}</p>

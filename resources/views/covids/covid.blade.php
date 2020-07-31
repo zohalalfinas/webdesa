@@ -5,7 +5,7 @@
     <div class="section-top-border mb-5">
         <div class="container">
             <center>
-                <h3 class="" style="">Jumlah terpapar Covid-19 Kota Jember</h3>
+                <h3 class="" style="">Jumlah terpapar Covid-19</h3>
                 <div class="border-bottom mt-3"></div>
             </center>
             <center>
