@@ -30,7 +30,7 @@
             <img src="{{asset('foto/event')}}/{{$p->foto}}" class="d-block w-100" alt="...">
             <div class="carousel-caption d-none d-md-block">
                 <h5 style="font-size:300%;color:white;">Event</h5>
-                <p style="color:white;">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                <p style="color:white;">{{$p->nama}}</p>
             </div>
             </div>      
             @php $j++; @endphp                    
@@ -49,8 +49,10 @@
             <div class="container">
                 <div class="row col-md-12">
                     @foreach ($data as $event)                   
-                    <div class="card mt-5 ml-1 mb-3" style="width: 18rem; display:block;">
-                        <img src="{{asset('foto/event')}}/{{$event->foto}}" class="card-img-top" alt="...">
+                    <div class="card mt-5 ml-1 mb-3" style="width: 17rem; display:block;">
+                        <div class="panel-body" style="max-height:300px;overflow:hidden;">
+                            <img src="{{asset('foto/event')}}/{{$event->foto}}" class="card-img-top" alt="...">
+                        </div>
                         <div class="card-body">
                             <h5 class="card-title">{{$event->nama}}</h5>
                             <div class="row">
@@ -69,7 +71,7 @@
                                     <p>{{$event->waktu}}</p>
                                 </div>
                             </div>
-                            <div class="row">
+                            <div class="row mb-2">
                                 <div class="col">
                                     <p>lokasi :</p>
                                 </div>
@@ -77,10 +79,10 @@
                                     <p>{{$event->lokasi}}</p>
                                 </div>
                             </div>
-                             <a href="{{url('event/detail')}}/{{$event->id_event}}" class="btn btn-primary">Lihat selengkapnya</a>
+                             <a href="{{url('event/detail')}}/{{$event->id_event}}" class="btn-custom p-2 ">Lihat selengkapnya</a>
                         </div>
-                    @endforeach
                     </div>
+                    @endforeach
                 </div>
             </div>
         </section>

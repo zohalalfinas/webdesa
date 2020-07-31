@@ -22,10 +22,8 @@
             <link rel="stylesheet" href="{{ asset('aznews/assets/css/slick.css')}}">
             <link rel="stylesheet" href="{{ asset('aznews/assets/css/nice-select.css')}}">
             <link rel="stylesheet" href="{{ asset('aznews/assets/css/style.css')}}">
-            <link
-    rel="stylesheet"
-    href="https://unpkg.com/aos@2.3.1/dist/aos.css"
-  />
+            <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
+            <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
         <style>
         .trend-bottom-cap h5{
             color:white;
@@ -60,6 +58,25 @@
             background-color:transparent;
             color: #f27420;
             cursor:pointer;
+        }
+        .slick-arrow{
+            position:absolute;
+            bottom:-50px;
+            z-index:inherit;
+            background-color: white;
+            border:1px solid #f27420;
+            padding:8px 15px;
+            border-radius:50px;
+            width:100px;
+            outline:none;
+            color:#f27420;  
+            cursor:pointer;
+        }
+        .slick-next{
+            left:52%;
+        }
+        .slick-prev{
+            left:42%;
         }
         </style>
    </head>
@@ -228,9 +245,21 @@
         <script src="{{asset('aznews/assets/js/plugins.js')}}"></script>
         <script src="{{asset('aznews/assets/js/main.js')}}"></script>
         <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+        <!-- slick -->
+        <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+
         <script>
             AOS.init();
-          </script>
+        </script>
+        <script>
+        $('.slicky').slick({
+            slidesToShow: 4,
+            slidesToScroll: 1,
+            autoplay: true,
+            autoplaySpeed: 2000,
+        });
+        </script>
         
     </body>
 </html>

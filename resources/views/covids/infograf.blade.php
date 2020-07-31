@@ -34,7 +34,7 @@
                         <img src="{{asset('foto/infografik')}}/{{$infograf->foto}}" alt="" class="img-fluid">
                     </div>
                     <div class="modal-footer justify-content-center">
-                        <button type="button" class="btn btn-outline-primary btn-rounded btn-md ml-4"
+                        <button type="button" class="btn-custom btn-md ml-4"
                         data-dismiss="modal">Close</button>
                     </div>
                 </div>
@@ -42,5 +42,7 @@
         </div>
     </div>
 </div>
+
 @endforeach
+
 @endsection

@@ -24,9 +24,8 @@
             <center>
                 @foreach ($grafik as $item)
                     
-                <div style="margin-top:-4%;" class="row">
-                    <div style="height:100px; border-radius:10px;" class="col bg-danger ">
-                        
+                <div style="margin-top:-4%;" class="row ">
+                    <div style="height:100px; border-radius:10px;" class="col bg-danger">
                         <h1 style="color:white; " class="mt-4">{{ $item['positif'] }}</h1>
                     </div>
                     <div style="height:100px; border-radius:10px;" class="col bg-primary circle ">

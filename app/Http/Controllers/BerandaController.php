@@ -20,7 +20,7 @@ class BerandaController extends Controller
      */
     public function index()
     {
-        $produk = m_produk::get();
+        $produk = m_produk::get()->take(3);
         $event = m_event::get();
         $pariwisata = m_pariwisata::get();
         $artikel = m_artikel::get()->take(2);

@@ -12,13 +12,15 @@
             </div>
         </div>
     </aside>
-    <div class="album py-5 bg-light">
+    <div class="album py-5 ">
         <div class="container">
             <div class="row">
                 @foreach ($data as $produk)
                 <div class="col-md-4 mb-5">
                     <div style="background-color:transparent;border:none;" class="card mb-4 shadow-sm">
-                        <img src="{{asset('foto/produk')}}/{{$produk->foto}}" class="rounded mx-auto d-block mt-2 shadow-lg" alt="Responsive image" width="50%">
+                        <div class="panel-body " style="max-height:100px;text-align:center;overflow:hidden;padding:0;">
+                            <img  src="{{asset('foto/produk')}}/{{$produk->foto}}" class=" mx-auto d-block mt-2 " alt="Responsive image" width="50%">
+                        </div>
                         <div class="card-body">
                             <center>
                                 <h4 class="card-text">{{$produk->judul}}</h4>

@@ -37,23 +37,28 @@
                             </div>
                         </div>
                         <!-- Trending Bottom -->
-                        <div class="trending-bottom" data-aos="flip-up">
+                        <div class="trending-bottom" >
                             <div class="section-tittle mb-30">
                                 <h3>Produk sumberejo</h3>
                             </div>
-                            <div class="row">
+                            <div class="row" >
+                                <?php $i=200;
+                                $a=0;?>
                                 @foreach ($produk as $item)
-                                <div class="col-lg-4" >
-                                <div class="single-bottom mb-35">
-                                    <div class="trend-bottom-img mb-30">
-                                        <img src="{{asset('foto/produk')}}/{{$item->foto}}" alt="" style="object-fit: none;object-position: center;
-                                        width: 100%;max-height: 400px;margin-bottom: 1rem;">
+                                <div class="col-md-4 mb-5" data-aos="zoom-in-down" data-aos-delay="<?=$a=$a+$i;?>">
+                                    <div style="background-color:transparent;border:none;" class="card mb-4 shadow-sm">
+                                        <div class="panel-body " style="max-height:100px;text-align:center;overflow:hidden;padding:0;">
+                                            <img  src="{{asset('foto/produk')}}/{{$item->foto}}" class=" mx-auto d-block mt-2 " alt="Responsive image" width="50%">
+                                        </div>
+                                        <div class="card-body">
+                                            <center>
+                                                <h4 class="card-text">{{$item->judul}}</h4>
+                                                <a href="{{url('item/detail' , $item->id_produk)}}">
+                                                    <button type="button" class="btn-custom">Detail</button>
+                                                </a>
+                                            </center>
+                                        </div>
                                     </div>
-                                    <div class="trend-bottom-cap">
-                                        <span class="color1">asd</span>
-                                        <h4><a href="{{url('produk/detail')}}/{{$item->id_produk}}">{{$item->deskripsi}}</a></h4>
-                                    </div>
-                                </div>
                                 </div>
                                 @endforeach
                             </div>
@@ -63,13 +68,52 @@
             </div>
         </div>
     </div> 
-                       
     <!-- Trending Area End -->
+    <!-- event start -->
+    <div class="container-fluid">
+        <div class="container">
+            <div class="section-tittle mb-30">
+                <h3>Event Desa</h3>
+            </div>
+            <!-- slick -->
+            <div class="slicky">
+            @foreach ($event as $item)
+                <div class="col-md-3 col-sm-12" >
+                    <div class="card mb-1">
+                        <div class="" style="max-height:300px;overflow:hidden;">
+                            <img src="{{asset('foto/event')}}/{{$item->foto}}" class="card-img-top" alt="...">
+                        </div>
+                        <div class="card-body">
+                        <h5 class="card-title">{{$item->nama}}</h5>
+                        <div class="row">
+                            <div class=".col-6 ml-3">
+                                <p>Tanggal : </p>
+                            </div>
+                            <div class="col">
+                                <p>{{$item->tgl}}</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class=".col-6  ml-3">
+                                <p>Waktu : </p>
+                            </div>
+                            <div class="col">
+                                <p>{{$item->waktu}}</p>
+                            </div>
+                        </div>
+                        <a href="{{url('event')}}" class="btn-custom p-2 ">Lihat selengkapnya</a>
+                        </div>
+                    </div>
+                </div>
+            @endforeach   
+            </div>
+    </div>
+
     <!--  Recent Articles start -->
-    <div class="recent-articles">
+    <!-- <div class="recent-articles">
         <div class="container">
            <div class="recent-wrapper">
-                <!-- section Tittle -->
+                section Tittle
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="section-tittle mb-30">
@@ -121,7 +165,7 @@
                 </div>
            </div>
         </div>
-    </div>           
+    </div>            -->
     <!--Recent Articles End -->
    <!-- Whats New Start -->
     <section class="whats-news-area pt-50 pb-20">
@@ -149,7 +193,7 @@
                                                 </div>
                                                 <div class="what-cap">
                                                     <span class="color1">Artikel</span>
-                                                    <h4><a href="{{url('covid/artikel/detail' , $item->id_artikel)}}">{{$item->judul}}</a></h4>
+                                                    <h4><a href="{{url('covid/artikel/Lihat selengkapnya' , $item->id_artikel)}}">{{$item->judul}}</a></h4>
                                                 </div>
                                             </div>
                                         </div>
