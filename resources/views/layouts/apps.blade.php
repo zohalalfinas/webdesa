@@ -24,6 +24,8 @@
             <link rel="stylesheet" href="{{ asset('aznews/assets/css/style.css')}}">
             <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
             <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+            <link href="https://fonts.googleapis.com/css2?family=Carter+One&family=Frank+Ruhl+Libre:wght@900&family=Kaushan+Script&display=swap" rel="stylesheet">
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.css">
         <style>
         .trend-bottom-cap h5{
             color:white;
@@ -56,6 +58,7 @@
         }
         .btn-custom:hover{
             background-color:transparent;
+            border:1px solid #f27420;
             color: #f27420;
             cursor:pointer;
         }
@@ -77,6 +80,55 @@
         }
         .slick-prev{
             left:42%;
+        }
+        .video-background {
+            position: relative;
+            background-color: black;
+            height: 87vh;
+            min-height: 25rem;
+            width: 100%;
+            overflow: hidden;
+            margin-top:-16px;
+        }
+
+        .video-background video {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            min-width: 100%;
+            min-height: 100%;
+            width: auto;
+            height: auto;
+            z-index: 0;
+            -ms-transform: translateX(-50%) translateY(-50%);
+            -moz-transform: translateX(-50%) translateY(-50%);
+            -webkit-transform: translateX(-50%) translateY(-50%);
+            transform: translateX(-50%) translateY(-50%);
+        }
+
+        .video-background .container {
+            position: relative;
+            z-index: 2;
+        }
+
+        .video-background .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            background-color: black;
+            opacity: 0.5;
+            z-index: 1;
+        }
+
+        @media (pointer: coarse) and (hover: none) {
+            .video-background {
+                background: url('https://source.unsplash.com/XT5OInaElMw/1600x900') black no-repeat center center scroll;
+            }
+            header video {
+                display: none;
+            }
         }
         </style>
    </head>
@@ -179,7 +231,7 @@
 
         <!-- slick -->
         <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
-
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.js"></script>
         <script>
             AOS.init();
         </script>
@@ -206,6 +258,12 @@
             $('.slicky').slick('resize');
          });
         </script>
+        <script>
+            $(document).on('click', '[data-toggle="lightbox"]', function(event) {
+                    event.preventDefault();
+                    $(this).ekkoLightbox();
+                });
+        </script> 
         
     </body>
 </html>

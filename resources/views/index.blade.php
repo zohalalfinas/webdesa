@@ -2,79 +2,163 @@
 
 @section('content')
 <main>
-    <!-- Trending Area Start -->
-    <div class="trending-area fix">
-        <div class="container">
-            <div class="trending-main">
-                <!-- Trending Tittle -->
-                <div class="row">
-                    <div class="col-lg-12">
-                        <div class="trending-tittle">
-                            <strong style="padding:11px 9px;">Kami sampaikan</strong>
-                            <!-- <p>Rem ipsum dolor sit amet, consectetur adipisicing elit.</p> -->
-                            <div class="trending-animated">
-                                <ul id="js-news" class="js-hidden">
-                                    <li class="news-item">Selamat datang di website resmi desa sumberejo......</li>
-                                </ul>
-                            </div>
-                            
-                        </div>
-                    </div>
+<section>
+    <div class="video-background">
+        <div class="overlay"></div>
+        <video playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop">
+            <source src="{{asset('aznews/assets/img/banner/profile.mp4')}}" type="video/mp4">
+        </video>
+        <div class="container h-100">
+            <div class="d-flex h-100 text-center align-items-center">
+                <div class="w-100 text-white">
+                    <h1 style="color:white;font-family: 'Kaushan Script', cursive;" class="display-3">Selamat Datang</h1>
+                    <p style="color:white;font-family: 'Kaushan Script', cursive;" class="lead mb-0">di website resmi desa sumberejo</p>
+                    <a href="#1"><button type="button" class="btn-custom mt-5"> scroll</button></a>
                 </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- pariwisata start -->
+<section id="1" class="mt-4">
+    <div class="container-fluid py-4">
+        <div class="container">
+            <center>
+                <h1 class="mb-5" style="font-family: 'Kaushan Script', cursive;">Pariwisata</h1>
+            </center>
                 <div class="row">
-                    <div class="col-lg">
+                    <div class="col-lg-8">
                         <!-- Trending Top -->
-                        <div  class="trending-top mb-30 ml-10">
+                        <div class="trending-top mb-30">
                             <div class="trend-top-img">
                                 <div class="embed-responsive embed-responsive-16by9">
-                                    <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/Eecr2TdZ4-s" allowfullscreen></iframe>
+                                    <iframe class="embed-responsive-item " src="https://www.youtube.com/embed/Eecr2TdZ4-s?autoplay=1;&rel=0;" allowfullscreen allow="autoplay"></iframe>
                                 <!-- <img src="{{asset('aznews/assets/img/trending/trending_top.jpg')}}" alt=""> -->
-                                </div>
-                                <div class="trend-top-cap">
-                                    <span>pariwisata</span>
-                                    <h2><a href="{{ url('pariwisata') }}">Keindahan Pariwisata <br>di desa Sumberejo</a></h2>    
                                 </div>
                             </div>
                         </div>
                         <!-- Trending Bottom -->
-                        <div class="trending-bottom" >
-                            <div class="section-tittle mb-30">
-                                <h3>Produk sumberejo</h3>
-                            </div>
-                            <div class="row" >
-                                <?php $i=200;
-                                $a=0;?>
-                                @foreach ($produk as $item)
-                                <div class="col-md-4 mb-5" data-aos="zoom-in-down" data-aos-delay="<?=$a=$a+$i;?>">
-                                    <div style="background-color:transparent;border:none;" class="card mb-4 shadow-sm">
-                                        <div class="panel-body " style="max-height:150px;text-align:center;overflow:hidden;padding:0;">
-                                            <img  src="{{asset('foto/produk')}}/{{$item->foto}}" class=" mx-auto d-block mt-2 " alt="Responsive image" width="50%">
+                        <h4 class="mb-2">Artikel pariwisata</h4>
+                        <div class="trending-bottom">
+                            <div class="row">
+                                <div class="col-lg-4">
+                                    <div class="single-bottom mb-35">
+                                        <div class="trend-bottom-img mb-30">
+                                            <img src="{{asset('aznews/assets/img/trending/trending_bottom1.jpg')}}" alt="">
                                         </div>
-                                        <div class="card-body">
-                                            <center>
-                                                <h4 class="card-text">{{$item->judul}}</h4>
-                                                <a href="{{url('item/detail' , $item->id_produk)}}">
-                                                    <button type="button" class="btn-custom">Detail</button>
-                                                </a>
-                                            </center>
+                                        <div class="">
+                                            <h5><a href="details.html">pantai watu ulo</a></h5>
                                         </div>
                                     </div>
-                                </div>
-                                @endforeach
+                                    </div>
+                                    <div class="col-lg-4">
+                                        <div class="single-bottom mb-35">
+                                            <div class="trend-bottom-img mb-30">
+                                                <img src="{{asset('aznews/assets/img/trending/trending_bottom2.jpg')}}" alt="">
+                                            </div>
+                                            <div class="">
+                                                <h5><a href="details.html">pantai payangan</a></h5>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4">
+                                        <div class="single-bottom mb-35">
+                                            <div class="trend-bottom-img mb-30">
+                                                <img src="{{asset('aznews/assets/img/trending/trending_bottom3.jpg')}}" alt="">
+                                            </div>
+                                            <div class="">
+                                                <h5><a href="details.html">bukit domba</a></h5>
+                                            </div>
+                                        </div>
+                                    </div>
                             </div>
                         </div>
                     </div>
+                    <!-- Riht content -->
+                    <div class="col-lg-4">
+                        <!-- Section Tittle -->
+                        <div class="section-tittle mb-40">
+                            <h3>Gallery Pariwisata</h3>
+                        </div>
+                        <!-- Flow Socail -->
+                        <div class="single-follow mb-45">
+                            <div class="container">
+                                <div class="row mb-4 ">
+                                        <a href="https://unsplash.it/1200/768.jpg?image=251" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-4">
+                                        <img src="https://unsplash.it/600.jpg?image=251" class="img-fluid">
+                                    </a>
+                                    <a href="https://unsplash.it/1200/768.jpg?image=252" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-4">
+                                    <img src="https://unsplash.it/600.jpg?image=252" class="img-fluid">
+                                    </a>
+                                    <a href="https://unsplash.it/1200/768.jpg?image=253" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-4">
+                                    <img src="https://unsplash.it/600.jpg?image=253" class="img-fluid">
+                                    </a>
+                                </div>
+                                <div class="row mb-4">
+                                    <a href="https://unsplash.it/1200/768.jpg?image=254" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-4">
+                                    <img src="https://unsplash.it/600.jpg?image=254" class="img-fluid">
+                                    </a>
+                                    <a href="https://unsplash.it/1200/768.jpg?image=255" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-4">
+                                        <img src="https://unsplash.it/600.jpg?image=255" class="img-fluid">
+                                    </a>
+                                    <a href="https://unsplash.it/1200/768.jpg?image=256" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-4">
+                                        <img src="https://unsplash.it/600.jpg?image=256" class="img-fluid">
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- New Poster -->
+                        <div class="news-poster d-none d-lg-block">
+                            <img src="assets/img/news/news_card.jpg" alt="">
+                        </div>
+                    </div>
+                </div>
+        </div>
+    </div>
+</section>
+<!-- pariwisata end -->
+<!-- Produkk bumdes start -->
+<section>
+    <div class="container-fluid pt-4" style="background-image:url('{{asset('aznews/assets/img/banner/background1.png')}}');">
+        <div class="container">
+            <div class="trending-bottom " >
+                <center>
+                    <h1 class="mb-3" style="font-family: 'Kaushan Script', cursive;color:white;">Produk Bumdes</h1>
+                </center>
+                <div class="row" >
+                    <?php $i=200;
+                    $a=0;?>
+                    @foreach ($produk as $item)
+                    <div class="col-md-4 mb-5" data-aos="zoom-in-down" data-aos-delay="<?=$a=$a+$i;?>">
+                        <div style="background-color:transparent;border:none;" class="card mb-4 shadow-sm">
+                            <div class="panel-body " style="max-height:150px;text-align:center;overflow:hidden;padding:0;">
+                                <img  src="{{asset('foto/produk')}}/{{$item->foto}}" class=" mx-auto d-block mt-2 " alt="Responsive image" width="50%">
+                            </div>
+                            <div class="card-body">
+                                <center>
+                                    <h4 style="color:white;" class="card-text">{{$item->judul}}</h4>
+                                    <a href="{{url('item/detail' , $item->id_produk)}}">
+                                        <button type="button" class="btn-custom ">Detail</button>
+                                    </a>
+                                </center>
+                            </div>
+                        </div>
+                    </div>
+                    @endforeach
                 </div>
             </div>
         </div>
-    </div> 
-    <!-- Trending Area End -->
-    <!-- event start -->
-    <div class="container-fluid">
+    </div>
+</section>
+<!-- produk bumdes end -->
+<!-- event start -->
+<section>
+    <div class="container-fluid pt-4">
         <div class="container">
-            <div class="section-tittle mb-30">
-                <h3>Event Desa</h3>
-            </div>
+            <center>
+                <h1 class="mb-5" style="font-family: 'Kaushan Script', cursive;">Event Desa</h1>
+            </center>
             <!-- slick -->
             <div class="slicky">
             @foreach ($event as $item)
@@ -107,85 +191,28 @@
                 </div>
             @endforeach   
             </div>
-    </div>
-
-    <!--  Recent Articles start -->
-    <!-- <div class="recent-articles">
-        <div class="container">
-           <div class="recent-wrapper">
-                section Tittle
-                <div class="row">
-                    <div class="col-lg-12">
-                        <div class="section-tittle mb-30">
-                            <h3>Event</h3>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-12">
-                        <div class="recent-active dot-style d-flex">
-                            <div class="single-recent mb-100">
-                                <div class="what-img">
-                                    <img src="{{asset('aznews/assets/img/news/recent1.jpg')}}" alt="">
-                                </div>
-                                <div class="what-cap">
-                                    <span class="color1">Night party</span>
-                                    <h4><a href="#">Welcome To The Best Model  Winner Contest</a></h4>
-                                </div>
-                            </div>
-                            <div class="single-recent mb-100">
-                                <div class="what-img">
-                                    <img src="{{asset('aznews/assets/img/news/recent2.jpg')}}" alt="">
-                                </div>
-                                <div class="what-cap">
-                                    <span class="color1">Night party</span>
-                                    <h4><a href="#">Welcome To The Best Model  Winner Contest</a></h4>
-                                </div>
-                            </div>
-                            <div class="single-recent mb-100">
-                                <div class="what-img">
-                                    <img src="{{asset('aznews/assets/img/news/recent3.jpg')}}" alt="">
-                                </div>
-                                <div class="what-cap">
-                                    <span class="color1">Night party</span>
-                                    <h4><a href="#">Welcome To The Best Model  Winner Contest</a></h4>
-                                </div>
-                            </div>
-                            <div class="single-recent mb-100">
-                                <div class="what-img">
-                                    <img src="{{asset('aznews/assets/img/news/recent2.jpg')}}" alt="">
-                                </div>
-                                <div class="what-cap">
-                                    <span class="color1">Night party</span>
-                                    <h4><a href="#">Welcome To The Best Model  Winner Contest</a></h4>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-           </div>
         </div>
-    </div>            -->
-    <!--Recent Articles End -->
+    </div>
+</section>
+<!-- event end -->
    <!-- Whats New Start -->
-    <section class="whats-news-area pt-50 pb-20">
+    <section class="whats-news-area pt-50 pb-20 mt-5">
         <div class="container">
+            <center>
+                <h1 class="mb-5" style="font-family: 'Kaushan Script', cursive;">Covid -19</h1>
+            </center>
             <div class="row">
             <div class="col-lg-8">
-                        <div class="section-tittle mb-30">
-                            <h3>Pencegahan Covid</h3>
-                        </div>
-                    
                 <div class="row">
                     <div class="col-12">
                         <!-- Nav Card -->
                         <div class="tab-content" id="nav-tabContent">
                             <!-- card one -->
-                            <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab"  data-aos="fade-right">           
+                            <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab"  >           
                                 <div class="whats-news-caption">
                                     <div class="row">
                                         @foreach ($artikel as $item)
-                                        <div class="col-lg-6 col-md-6">
+                                        <div class="col-lg-6 col-md-6" data-aos="fade-righ" data-aos-delay="100">
                                             <div class="single-what-news mb-100">
                                                 <div class="what-img" style="max-height:300px;text-align:center;overflow:hidden;padding:0;">
                                                     <img src="{{asset('foto/artikel')}}/{{$item->foto}}" alt="" >
@@ -198,7 +225,7 @@
                                         </div>
                                         @endforeach
                                         @foreach ($infografik as $item)
-                                        <div class="col-lg-6 col-md-6">
+                                        <div class="col-lg-6 col-md-6" data-aos="fade-righ" data-aos-delay="200">
                                             <div class="single-what-news mb-100">
                                                 <div class="what-img" style="max-height:300px;text-align:center;overflow:hidden;padding:0;">
                                                     <img src="{{asset('foto/infografik')}}/{{$item->foto}}" alt="">
@@ -227,40 +254,40 @@
                 <div class="single-follow mb-45">
                     <div class="single-box" >
                         @foreach ($grafik as $item)
-                        <div class="follow-us d-flex align-items-center">
+                        <div style="background-color:#2C347C;" class="follow-us d-flex align-items-center">
                             <div class="follow-social">
                                 <a href="#"><img src="assets/img/news/icon-fb.png" alt=""></a>
                             </div>
-                            <div class="follow-count">  
-                                <span>{{ $item['positif'] }}</span>
-                                <p>Positif</p>
+                            <div class="follow-count" >  
+                                <span  style="color:white;">{{ $item['positif'] }}</span>
+                                <p  style="color:white;">Positif</p>
                             </div>
                         </div> 
-                        <div class="follow-us d-flex align-items-center">
+                        <div style="background-color:#3C928C;" class="follow-us d-flex align-items-center">
                             <div class="follow-social">
                                 <a href="#"><img src="assets/img/news/icon-tw.png" alt=""></a>
                             </div>
-                            <div class="follow-count">
-                                <span>{{ $item['sembuh'] }}</span>
-                                <p>Sembuh</p>
+                            <div class="follow-count"  >
+                                <span  style="color:white;">{{ $item['sembuh'] }}</span>
+                                <p  style="color:white;">Sembuh</p>
                             </div>
                         </div>
-                            <div class="follow-us d-flex align-items-center">
+                        <div style="background-color:#EC6F58;" class="follow-us d-flex align-items-center">
                             <div class="follow-social">
                                 <a href="#"><img src="assets/img/news/icon-ins.png" alt=""></a>
                             </div>
-                            <div class="follow-count">
-                                <span>{{ $item['meninggal'] }}</span>
-                                <p>Meninggal</p>
+                            <div class="follow-count"  >
+                                <span  style="color:white;">{{ $item['meninggal'] }}</span>
+                                <p  style="color:white;">Meninggal</p>
                             </div>
                         </div>
-                        <div class="follow-us d-flex align-items-center">
+                        <div style="background-color:#CEB546;" class="follow-us d-flex align-items-center">
                             <div class="follow-social">
                                 <a href="#"><img src="assets/img/news/icon-yo.png" alt=""></a>
                             </div>
-                            <div class="follow-count">
-                                <span>{{ $item['positif'] }}</span>
-                                <p>Aktif</p>
+                            <div class="follow-count"  >
+                                <span  style="color:white;">{{ $item['positif'] }}</span>
+                                <p  style="color:white;">Aktif</p>
                             </div>
                         </div>
                                                     
@@ -277,7 +304,7 @@
     </section>
     <!-- Whats New End -->
    
-    </main>
+</main>
 
 
 @endsection
