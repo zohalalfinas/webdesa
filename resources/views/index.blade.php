@@ -66,28 +66,20 @@
                         <!-- Flow Socail -->
                         <div class="single-follow mb-45">
                             <div class="container">
-                                <div class="row mb-4 ">
-                                        <a href="https://unsplash.it/1200/768.jpg?image=251" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-4">
-                                        <img src="https://unsplash.it/600.jpg?image=251" class="img-fluid">
-                                    </a>
-                                    <a href="https://unsplash.it/1200/768.jpg?image=252" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-4">
-                                    <img src="https://unsplash.it/600.jpg?image=252" class="img-fluid">
-                                    </a>
-                                    <a href="https://unsplash.it/1200/768.jpg?image=253" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-4">
-                                    <img src="https://unsplash.it/600.jpg?image=253" class="img-fluid">
-                                    </a>
-                                </div>
-                                <div class="row mb-4">
-                                    <a href="https://unsplash.it/1200/768.jpg?image=254" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-4">
-                                    <img src="https://unsplash.it/600.jpg?image=254" class="img-fluid">
-                                    </a>
-                                    <a href="https://unsplash.it/1200/768.jpg?image=255" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-4">
-                                        <img src="https://unsplash.it/600.jpg?image=255" class="img-fluid">
-                                    </a>
-                                    <a href="https://unsplash.it/1200/768.jpg?image=256" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-4">
-                                        <img src="https://unsplash.it/600.jpg?image=256" class="img-fluid">
-                                    </a>
-                                </div>
+                                <div class="blog_right_sidebar">
+                                    <aside class="single_sidebar_widget instagram_feeds">
+                                       <a href=""><h4 class="widget_title">Galeri Pariwisata</h4></a> 
+                                       <ul class="instagram_row flex-wrap">
+                                          @foreach ($pariwisata as $item)
+                                          <li>
+                                             <a href="{{url('pariwisata/detail' , $item->id_pariwisata)}}">
+                                                <img class="img-fluid" src="{{asset('foto/pariwisata')}}/{{$item->foto}}" alt="" style="max-height:80px;text-align:center;overflow:hidden;padding:0;">
+                                             </a>
+                                          </li>
+                                          @endforeach
+                                       </ul>
+                                    </aside>
+                                 </div>
                             </div>
                         </div>
                         <!-- New Poster -->
