@@ -72,6 +72,9 @@ class CovidController extends Controller
     public function store_infografik(Request $request)
     {
         $data = new m_infografik;
+        $request->validate([
+            'judul' => 'required',
+        ]);
         $data->judul = $request['judul'];
         if($request->hasFile('foto')){
             $request->file('foto')->move('foto/infografik/', $request->file('foto')->getClientOriginalName());
@@ -84,6 +87,9 @@ class CovidController extends Controller
     public function store_video(Request $request)
     {
         $data = new m_video;
+        $request->validate([
+            'judul' => 'required',
+        ]);
         $data->judul = $request['judul'];
         $data->link = $request['link'];
         $data->save();
@@ -93,6 +99,11 @@ class CovidController extends Controller
     public function store_artikel(Request $request)
     {
         $data = new m_artikel;
+        $request->validate([
+            'deskripsi' => 'required|min:50',
+            'judul' => 'required',
+            'foto' => 'required|image|mimes:jpeg,png,gif,webp,pdf'
+        ]);
         $data->judul = $request['judul'];
         $data->deskripsi = $request['deskripsi'];
         if($request->hasFile('foto')){
@@ -111,6 +122,9 @@ class CovidController extends Controller
     public function update_infografik(Request $request, $id)
     {
         $data = m_infografik::find($id);
+        $request->validate([
+            'judul' => 'required',
+        ]);
         $data->judul = $request['judul'];
         if($request->hasFile('foto')){
             $request->file('foto')->move('foto/infografik/', $request->file('foto')->getClientOriginalName());
@@ -123,25 +137,23 @@ class CovidController extends Controller
     public function update_video(Request $request, $id)
     {
         $data = m_video::find($id);
+        $request->validate([
+            'judul' => 'required',
+        ]);
         $data->judul = $request['judul'];
         $data->link = $request['link'];
         $data->save();
         return back()->with('success','Video Berhasil Diubah');
     }
 
-    public function update_grafik(Request $request, $id)
-    {
-        $data = m_grafik::find($id);
-        $data->positif = $request['positif'];
-        $data->sembuh = $request['sembuh'];
-        $data->meninggal = $request['meninggal'];
-        $data->save();
-        return back()->with('success','Grafik Berhasil Diubah');
-    }
-
     public function update_artikel(Request $request, $id)
     {
         $data = m_artikel::find($id);
+        $request->validate([
+            'deskripsi' => 'required|min:50',
+            'judul' => 'required',
+            'foto' => 'required|image|mimes:jpeg,png,gif,webp,pdf'
+        ]);
         $data->judul = $request['judul'];
         $data->deskripsi = $request['deskripsi'];
         if($request->hasFile('foto')){

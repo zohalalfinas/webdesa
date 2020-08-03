@@ -34,7 +34,7 @@
                             <div class="trend-top-img">
                                 <div class="embed-responsive embed-responsive-16by9">
                                     <iframe class="embed-responsive-item " src="https://www.youtube.com/embed/Eecr2TdZ4-s?autoplay=1;&rel=0;" allowfullscreen allow="autoplay"></iframe>
-                                <!-- <img src="{{asset('aznews/assets/img/trending/trending_top.jpg')}}" alt=""> -->
+                                
                                 </div>
                             </div>
                         </div>
@@ -42,36 +42,18 @@
                         <h4 class="mb-2">Artikel pariwisata</h4>
                         <div class="trending-bottom">
                             <div class="row">
-                                <div class="col-lg-4">
+                                @foreach ($wisata as $item)
+                                <div class="col-lg-4" style="overflow: hidden;">
                                     <div class="single-bottom mb-35">
                                         <div class="trend-bottom-img mb-30">
-                                            <img src="{{asset('aznews/assets/img/trending/trending_bottom1.jpg')}}" alt="">
+                                            <img src="{{asset('foto/pariwisata')}}/{{$item->foto}}" style="max-height:300px;text-align:center;overflow:hidden;padding:0;">
                                         </div>
                                         <div class="">
-                                            <h5><a href="details.html">pantai watu ulo</a></h5>
+                                            <h5><a href="details.html">{{$item->nama}}</a></h5>
                                         </div>
                                     </div>
-                                    </div>
-                                    <div class="col-lg-4">
-                                        <div class="single-bottom mb-35">
-                                            <div class="trend-bottom-img mb-30">
-                                                <img src="{{asset('aznews/assets/img/trending/trending_bottom2.jpg')}}" alt="">
-                                            </div>
-                                            <div class="">
-                                                <h5><a href="details.html">pantai payangan</a></h5>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-4">
-                                        <div class="single-bottom mb-35">
-                                            <div class="trend-bottom-img mb-30">
-                                                <img src="{{asset('aznews/assets/img/trending/trending_bottom3.jpg')}}" alt="">
-                                            </div>
-                                            <div class="">
-                                                <h5><a href="details.html">bukit domba</a></h5>
-                                            </div>
-                                        </div>
-                                    </div>
+                                </div>
+                                @endforeach
                             </div>
                         </div>
                     </div>

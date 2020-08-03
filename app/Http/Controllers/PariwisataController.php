@@ -25,6 +25,13 @@ class PariwisataController extends Controller
     public function store(Request $request)
     {
         $data = new m_pariwisata;
+        $request->validate([
+            'nama' => 'required',
+            'lokasi' => 'required',
+            'youtube' => 'required',
+            'deskripsi' => 'required|min:50',
+            'foto' => 'required|image|mimes:jpeg,png,gif,webp,pdf'
+        ]);
         $data->nama = $request['nama'];
         $data->lokasi = $request['lokasi'];
         $data->deskripsi = $request['deskripsi'];
@@ -47,6 +54,13 @@ class PariwisataController extends Controller
     public function update(Request $request, $id)
     {
         $data = m_pariwisata::find($id);
+        $request->validate([
+            'nama' => 'required',
+            'lokasi' => 'required',
+            'youtube' => 'required',
+            'deskripsi' => 'required|min:50',
+            'foto' => 'required|image|mimes:jpeg,png,gif,webp,pdf'
+        ]);
         $data->nama = $request['nama'];
         $data->lokasi = $request['lokasi'];
         $data->deskripsi = $request['deskripsi'];

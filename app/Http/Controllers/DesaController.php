@@ -45,6 +45,11 @@ class DesaController extends Controller
     public function store(Request $request)
     {
         $data = new m_struktur;
+        $request->validate([
+            'nama' => 'required',
+            'jabatan' => 'required',
+            'foto' => 'required|image|mimes:jpeg,png,gif,webp,pdf'
+        ]);
         $data->nama = $request['nama'];
         $data->jabatan = $request['jabatan'];
         if($request->hasFile('foto')){
@@ -56,6 +61,11 @@ class DesaController extends Controller
     }
     public function update_struktur(Request $request, $id){
         $data = m_struktur::find($id);
+        $request->validate([
+            'nama' => 'required',
+            'jabatan' => 'required',
+            'foto' => 'required|image|mimes:jpeg,png,gif,webp,pdf'
+        ]);
         $data->nama = $request['nama'];
         $data->jabatan = $request['jabatan'];
         if($request->hasFile('foto')){
@@ -98,6 +108,9 @@ class DesaController extends Controller
     public function update(Request $request, $id)
     {
         $data = m_profil::find($id);
+        $request->validate([
+            'deskripsi' => 'min:50',
+        ]);
         $data->deskripsi = $request['deskripsi'];
         $data->visi = $request['visi'];
         $data->misi = $request['misi'];

@@ -23,11 +23,12 @@ class BerandaController extends Controller
         $produk = m_produk::get()->take(3);
         $event = m_event::get();
         $pariwisata = m_pariwisata::get();
+        $wisata = m_pariwisata::get()->take(3);
         $artikel = m_artikel::get()->take(2);
         $infografik = m_infografik::get()->take(2);
         $response = Http::get('https://api.kawalcorona.com/indonesia');
         $grafik = $response->json();
-        return view('index', compact('produk' , 'event' , 'pariwisata' , 'artikel' , 'infografik' ,'grafik'));
+        return view('index', compact('produk' , 'event' , 'pariwisata' , 'artikel' , 'infografik' ,'grafik', 'wisata'));
     }
 
     /**

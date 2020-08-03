@@ -3,6 +3,12 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\m_artikel;
+use App\m_event;
+use App\m_grafik;
+use App\m_infografik;
+use App\m_pariwisata;
+use App\m_produk;
 
 class DashboardController extends Controller
 {
@@ -13,6 +19,12 @@ class DashboardController extends Controller
      */
     public function index()
     {
-        return view('admin.dashboard');
+        $artikel = m_artikel::get()->count();
+        $event = m_event::get()->count();
+        $grafik = m_grafik::get()->count();
+        $infografik = m_infografik::get()->count();
+        $pariwisata = m_pariwisata::get()->count();
+        $produk = m_produk::get()->count();
+        return view('admin.dashboard', compact('artikel','event','grafik','infografik','pariwisata','produk'));
     }
 }

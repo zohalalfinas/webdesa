@@ -18,7 +18,16 @@
     <div class="col-md-12">
         <div id="app">
             @include('layouts-admin.flash')
-
+            @if ($errors->any())
+            <div class="alert alert-danger alert-dismissible fade show">
+              <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+                @foreach ($errors->all() as $error)
+                <p>{{ $error }}</p>
+                @endforeach
+            </div>
+            @endif
         </div>
         <div class="mb-3 card">
             <div class="card-body">
@@ -132,7 +141,7 @@
                                         </div>
                                         <div class="position-relative row form-group"><label for="foto"
                                                 class="col-sm-2 col-form-label">Foto</label>
-                                            <div class="col-sm-10"><input id="foto" type="file"
+                                            <div class="col-sm-10"><input id="foto" name="foto" type="file"
                                                     class="form-control-file" accept="image/*">
                                                 <img src="{{asset('foto/pariwisata')}}/{{$pariwisata->foto}}"
                                                     class="img-thumbnail">
@@ -179,7 +188,7 @@
                                         </div>
                                         <div class="position-relative row form-group"><label for="foto"
                                                 class="col-sm-2 col-form-label">Foto</label>
-                                            <div class="col-sm-10"><input id="foto" type="file"
+                                            <div class="col-sm-10"><input name="foto" id="foto" type="file"
                                                     class="form-control-file" accept="image/*">
                                                 <img src="{{asset('foto/pariwisata')}}/{{$pariwisata->foto}}"
                                                     class="img-thumbnail">

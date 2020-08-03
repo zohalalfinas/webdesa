@@ -18,6 +18,16 @@
     <div class="col-md-12">
         <div id="app">
             @include('layouts-admin.flash')
+            @if ($errors->any())
+            <div class="alert alert-danger alert-dismissible fade show">
+              <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+                @foreach ($errors->all() as $error)
+                <p>{{ $error }}</p>
+                @endforeach
+            </div>
+            @endif
         </div>
         <div class="mb-3 card">
             <div class="card-body">

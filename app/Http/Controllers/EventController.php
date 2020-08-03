@@ -20,6 +20,16 @@ class EventController extends Controller
     public function store(Request $request)
     {
         $data = new m_event;
+        $request->validate([
+            'nama' => 'required',
+            'tgl' => 'required',
+            'waktu' => 'required',
+            'waktu' => 'required',
+            'lokasi' => 'required',
+            'penyelenggara' => 'required',
+            'deskripsi' => 'required|min:50',
+            'foto' => 'required|image|mimes:jpeg,png,gif,webp,pdf'
+        ]);
         $data->nama = $request['nama'];
         $data->tgl = $request['tgl'];
         $data->waktu = $request['waktu'];
@@ -44,6 +54,16 @@ class EventController extends Controller
     public function update(Request $request, $id)
     {
         $data = m_event::find($id);
+        $request->validate([
+            'nama' => 'required',
+            'tgl' => 'required',
+            'waktu' => 'required',
+            'waktu' => 'required',
+            'lokasi' => 'required',
+            'penyelenggara' => 'required',
+            'deskripsi' => 'required|min:50',
+            'foto' => 'required|image|mimes:jpeg,png,gif,webp,pdf'
+        ]);
         $data->nama = $request['nama'];
         $data->tgl = $request['tgl'];
         $data->waktu = $request['waktu'];

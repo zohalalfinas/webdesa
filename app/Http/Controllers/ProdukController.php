@@ -25,6 +25,11 @@ class ProdukController extends Controller
     public function store(Request $request)
     {
         $data = new m_produk;
+        $request->validate([
+            'judul' => 'required',
+            'deskripsi' => 'required|min:50',
+            'foto' => 'required|image|mimes:jpeg,png,gif,webp,pdf'
+        ]);
         $data->judul = $request['judul'];
         $data->deskripsi = $request['deskripsi'];
         if($request->hasFile('foto')){
@@ -45,6 +50,11 @@ class ProdukController extends Controller
     public function update(Request $request, $id)
     {
         $data = m_produk::find($id);
+        $request->validate([
+            'judul' => 'required',
+            'deskripsi' => 'required|min:50',
+            'foto' => 'required|image|mimes:jpeg,png,gif,webp,pdf'
+        ]);
         $data->judul = $request['judul'];
         $data->deskripsi = $request['deskripsi'];
         if($request->hasFile('foto')){
