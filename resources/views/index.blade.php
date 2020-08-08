@@ -17,6 +17,7 @@
                 </div>
             </div>
         </div>
+        <img src="{{asset('aznews/assets/img/banner/wave-d.png')}}" alt="" style="position: absolute; bottom:0;z-index:9999;width: 100%;">
     </div>
 </section>
 
@@ -40,10 +41,10 @@
                         </div>
                         <!-- Trending Bottom -->
                         <h4 class="mb-2">Artikel pariwisata</h4>
-                        <div class="trending-bottom">
+                        <div class="trending-bottom text-center">
                             <div class="row">
                                 @foreach ($wisata as $item)
-                                <div class="col-lg-4" style="overflow: hidden;">
+                                <div class="col-lg-4 mx-auto" style="overflow: hidden;">
                                     <div class="single-bottom mb-35">
                                         <div class="trend-bottom-img mb-30">
                                             <img src="{{asset('foto/pariwisata')}}/{{$item->foto}}" style="max-height:300px;text-align:center;overflow:hidden;padding:0;">
